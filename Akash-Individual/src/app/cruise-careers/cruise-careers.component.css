@@ -1,0 +1,55 @@
+   .column {
+     float: left;
+   }
+
+   .left {
+     width: 25%;
+     margin-top: 2%;
+     margin-left: 3%;
+   }
+
+   .center {
+     width: 40%;
+     margin-left: 3%;
+     padding: 2%;
+   }
+
+   .right {
+     width: 57%;
+     padding: 10px;
+   }
+
+
+   .row:after {
+     content: "";
+     display: table;
+     clear: both;
+   }
+
+   .example-form {
+     background-color: black;
+   }
+
+   .example-full-width-1 {
+     margin-left: 8%;
+     width: 30%;
+   }
+
+   .example-full-width-2 {
+     margin-left: 3%;
+     width: 30%;
+   }
+
+   .count {
+     margin-left: 3%;
+     margin-top: 2%;
+   }
+
+   .align-job {
+     float: right;
+     margin-top: -34px;
+   }
+
+   .navbar {
+     background-color: #e3f2fd;
+   }

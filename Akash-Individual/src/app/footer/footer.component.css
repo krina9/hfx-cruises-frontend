@@ -1,0 +1,24 @@
+.aligned {
+    background-color: rgba(0, 0, 0, 0.2);
+    text-align: center;
+  }
+.info
+{
+  color: white;
+}
+.headings
+{
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 150%;
+}
+.order
+{
+  list-style:none;
+  margin-right: 18%;
+}
+.rent
+{
+  list-style:none;
+  margin-right: 18%;
+}
