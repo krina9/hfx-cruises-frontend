@@ -1,0 +1,30 @@
+mat-toolbar {
+	flex: 1 1 auto;
+	justify-content: space-between;
+}
+mat-checkbox {
+	display: none;
+}
+.icon-container {
+	display: flex;
+	justify-content: space-around;
+	width: 150px;
+	padding-left: 50px;
+	color: #ffffff;
+}
+
+.nav-items {
+	display: inline-flex;
+	align-items: center;
+}
+
+.menu-btn {
+	display: flex;
+	color: #ffffff;
+}
+
+@media (max-width: 952px) {
+	.icon-container {
+		padding-left: 50px;
+	}
+}
