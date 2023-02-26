@@ -1,0 +1,55 @@
+* {
+  box-sizing: border-box;
+}
+
+/* Create two equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 50%;
+  padding: 10px;
+  height: 300px; /* Should be removed. Only for demonstration */
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.example-card {
+  max-width: 400px;
+}
+
+.example-header-image {
+  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+  background-size: cover;
+}
+
+
+.row {
+  display: flex;
+}
+
+.column {
+  flex : 50%;
+  padding: 5px;
+}
+
+.card {
+  margin-left: 2%;
+  flex : 50%;
+}
+
+.room {
+  margin-left: 2%;
+  flex : 50%;
+  height: 20%;
+}
+
+.image{
+  grid-column-start: 5;
+  grid-column-end: 9;
+  grid-row-start: 1;
+  grid-row-end: 6;
+}
