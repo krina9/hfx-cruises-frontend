@@ -1,0 +1,74 @@
+<div style="text-align: center;" class="container">
+    <mat-toolbar color="black" style="background-color: black;">
+        <span>
+            <div style="text-align: center; color: white;">
+                <h1>Cruise Booking</h1>
+            </div>
+        </span>
+    </mat-toolbar>
+
+    <div style="text-align: center;">
+        <form [formGroup]="bookingForm" (ngSubmit)="newPage()">
+
+            <div class="form-group"><mat-form-field appearance="fill">
+                    <mat-label>First Name</mat-label>
+                    <input matInput formControlName="firstName">
+                    <mat-error *ngIf="bookingForm.controls['firstName'].invalid">Please enter your first
+                        name</mat-error>
+                </mat-form-field>
+            </div>
+
+            <div class="form-group"><mat-form-field appearance="fill">
+                    <mat-label>Last Name</mat-label>
+                    <input matInput formControlName="lastName">
+                    <mat-error *ngIf="bookingForm.controls['lastName'].invalid">Please enter your last name</mat-error>
+                </mat-form-field>
+            </div>
+
+            <div class="form-group"><mat-form-field appearance="fill">
+                    <mat-label>Address</mat-label>
+                    <input matInput formControlName="address">
+                    <mat-error *ngIf="bookingForm.controls['address'].invalid">Please enter your address</mat-error>
+                </mat-form-field>
+            </div>
+
+            <div class="form-group"><mat-form-field appearance="fill">
+                    <mat-label>Pincode</mat-label>
+                    <input matInput formControlName="pincode">
+                    <mat-error *ngIf="bookingForm.controls['pincode'].invalid">Please enter your pincode</mat-error>
+                </mat-form-field>
+            </div>
+
+            <div class="form-group"><mat-form-field appearance="fill">
+                    <mat-label>Country</mat-label>
+                    <input matInput formControlName="country">
+                    <mat-error *ngIf="bookingForm.controls['country'].invalid">Please enter your country</mat-error>
+                </mat-form-field>
+            </div>
+
+            <div class="form-group"><mat-form-field appearance="fill">
+                    <mat-label>Phone Number</mat-label>
+                    <input matInput formControlName="phoneNumber">
+                    <mat-error *ngIf="bookingForm.controls['phoneNumber'].invalid">Please enter a valid phone
+                        number</mat-error>
+                </mat-form-field>
+            </div>
+
+            <div class="form-group"><mat-form-field appearance="fill">
+                    <mat-label>Email</mat-label>
+                    <input matInput formControlName="email">
+                    <mat-error *ngIf="bookingForm.controls['email'].invalid">Please enter a valid email</mat-error>
+                </mat-form-field>
+            </div>
+
+            <div class="form-group"><mat-form-field appearance="fill">
+                    <mat-label>Password</mat-label>
+                    <input matInput [type]="'password'" formControlName="password">
+                    <mat-error *ngIf="bookingForm.controls['password'].invalid">Please enter a valid
+                        password</mat-error>
+                </mat-form-field>
+            </div>
+            <button mat-raised-button color="primary" type="submit" (click)="newPage()">Pay</button>
+        </form>
+    </div>
+</div>

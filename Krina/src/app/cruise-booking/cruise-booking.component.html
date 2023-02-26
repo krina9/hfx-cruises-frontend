@@ -1,0 +1,62 @@
+<mat-toolbar color="black" style="background-color: black;">
+    <span style="text-align: center; color: white;">More details for your tour</span>
+</mat-toolbar>
+
+<div style="margin: 50px;">
+        <div style="text-align: center;">
+            <img mat-card-xl-image src="{{cruiseDetails.thumbnail}}">
+        </div>
+
+        <div class="about">
+            <h1>About the tour:</h1>
+        </div>
+
+        
+            <div class="aboutDescription">
+                <p>{{cruiseDetails.about}}</p>
+            </div>
+
+            <div class="des">
+                <h1>Destination:</h1>
+            </div>
+            <div class="desDescription">
+                <p>{{cruiseDetails.destination}}</p>
+            </div>
+
+            <div class="depart">
+                <h1>Departure Date:</h1>
+            </div>
+            <div class="departdate">
+                <p>{{cruiseDetails.departureDate}}</p>
+            </div>
+
+            <div class="arrive">
+                <h1>Arrival Date at Halifax Port:</h1>
+            </div>
+            <div class="arrivedate">
+                <p>{{cruiseDetails.arrivalDateAtHalifaxPort}}</p>
+            </div>
+
+            <div class="facility">
+                <h1>Facilities Included:</h1>
+            </div>
+            <div class="facilitydesc">
+                <p>{{cruiseDetails.facilities}}</p>
+            </div>
+
+            <div class="rooms">
+                <h1>Rooms Available:</h1>
+            </div>
+            <div class="roomsavail">
+                <p>{{cruiseDetails.rooms}}</p>
+            </div>
+
+            <div class="deals">
+                <h1>Deals Available:</h1>
+            </div>
+            <div class="dealsavail">
+                <p>{{cruiseDetails.deals}}</p>
+            </div>
+        <div><button mat-raised-button color="primary" style="margin-top: 15px;" (click)="navigate()">Book</button>
+        </div>
+    </div>
