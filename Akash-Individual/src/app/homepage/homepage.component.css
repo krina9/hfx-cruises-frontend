@@ -28,13 +28,15 @@
 
 .searchCruise
 {
-   width: 101%;
-   height: 400px;
-   background-color: black;
+   width: 101%; 
+  background-image: url(../../assets/Cruise_Home.jpg);   
+  height: 600px;
+  background-size: 100% 93%;
+  background-repeat: no-repeat;
 }
 .searchOptions
 {
-  background-color: white;
+  /* background-color: lightblue; */
     width: 103%;
     height: 250px;
     margin-left: 10%;
