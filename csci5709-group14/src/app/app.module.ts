@@ -31,6 +31,8 @@ import { EventSubscribeComponent } from './events/event-subscribe/event-subscrib
 import { EventHomeComponent } from './events/event-home/event-home.component';
 import { EventComponent } from './events/event/event.component';
 import { CruiesListComponent } from './cruies-list/cruies-list.component';
+import { CruiesDetailsComponent } from './cruies-details/cruies-details.component';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
 	declarations: [
@@ -48,7 +50,8 @@ import { CruiesListComponent } from './cruies-list/cruies-list.component';
 		EventSubscribeComponent,
 		EventHomeComponent,
 		EventComponent,
-  CruiesListComponent,
+		CruiesListComponent,
+		CruiesDetailsComponent,
 	],
 	imports: [
 		BrowserModule,
@@ -62,6 +65,7 @@ import { CruiesListComponent } from './cruies-list/cruies-list.component';
 		ReactiveFormsModule,
 		MaterialModule,
 		MdbCarouselModule,
+		FlexLayoutModule,
 	],
 	providers: [JobDetailsService],
 	bootstrap: [AppComponent],

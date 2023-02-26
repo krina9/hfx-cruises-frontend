@@ -10,6 +10,6 @@ export class CruiesListComponent {
 	constructor(private router: Router) {}
 
 	public onClick(id: number) {
-		this.router.navigate(['cruise-details']);
+		this.router.navigate(['cruisedetails']);
 	}
 }
