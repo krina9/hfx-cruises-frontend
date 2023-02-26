@@ -1,0 +1,206 @@
+<main class="form">
+	<div class="form-title">
+		<h1>Confirm your booking!</h1>
+	</div>
+	<div class="form-stepper">
+		<mat-vertical-stepper [linear]="false" #stepper>
+			<mat-step [stepControl]="personaldetails">
+				<form [formGroup]="personaldetails">
+					<ng-template matStepLabel
+						>Your Personal Details</ng-template
+					>
+					<div class="form-fields">
+						<mat-form-field>
+							<div>
+								<input
+									matInput
+									placeholder="First name"
+									formControlName="first_name"
+									required
+								/>
+							</div>
+						</mat-form-field>
+
+						<mat-form-field>
+							<div>
+								<input
+									matInput
+									placeholder="Last name"
+									formControlName="second_name"
+									required
+								/>
+							</div>
+						</mat-form-field>
+					</div>
+					<div>
+						<button mat-button matStepperNext class="form-buttons">
+							Next
+						</button>
+					</div>
+				</form>
+			</mat-step>
+			<mat-step [stepControl]="contactdetails">
+				<form [formGroup]="contactdetails">
+					<ng-template matStepLabel>Contact details</ng-template>
+					<div class="form-fields">
+						<mat-form-field>
+							<div>
+								<input
+									matInput
+									placeholder="Email ID"
+									formControlName="email"
+									required
+								/>
+							</div>
+						</mat-form-field>
+
+						<mat-form-field>
+							<div>
+								<input
+									matInput
+									placeholder="Phone Number"
+									formControlName="contact"
+									required
+								/>
+							</div>
+						</mat-form-field>
+					</div>
+					<div>
+						<button
+							mat-button
+							matStepperPrevious
+							class="form-buttons"
+						>
+							Back
+						</button>
+						<button mat-button matStepperNext class="form-buttons">
+							Next
+						</button>
+					</div>
+				</form>
+			</mat-step>
+			<mat-step [stepControl]="bookingdetails">
+				<form [formGroup]="bookingdetails">
+					<ng-template matStepLabel>Booking Details</ng-template>
+					<div class="form-fields">
+						<mat-form-field>
+							<div>
+								<input
+									matInput
+									placeholder="Departure City"
+									formControlName="city"
+									required
+								/>
+							</div>
+						</mat-form-field>
+						<mat-form-field>
+							<div>
+								<input
+									matInput
+									placeholder="Date"
+									formControlName="date"
+									required
+								/>
+							</div>
+						</mat-form-field>
+					</div>
+					<div>
+						<button
+							mat-button
+							matStepperPrevious
+							class="form-buttons"
+						>
+							Back
+						</button>
+						<button mat-button matStepperNext class="form-buttons">
+							Next
+						</button>
+					</div>
+				</form>
+			</mat-step>
+			<mat-step [stepControl]="eventdetails">
+				<form [formGroup]="eventdetails">
+					<ng-template matStepLabel>Event Details</ng-template>
+					<div class="form-fields">
+						<mat-form-field>
+							<div>
+								<input
+									matInput
+									placeholder="Event Name"
+									formControlName="event"
+									required
+								/>
+							</div>
+						</mat-form-field>
+
+						<mat-form-field>
+							<div>
+								<input
+									matInput
+									placeholder="Total guests"
+									formControlName="guests"
+									required
+								/>
+							</div>
+						</mat-form-field>
+					</div>
+					<div>
+						<button
+							mat-button
+							matStepperPrevious
+							class="form-buttons"
+						>
+							Back
+						</button>
+						<button mat-button matStepperNext class="form-buttons">
+							Next
+						</button>
+					</div>
+				</form>
+			</mat-step>
+
+			<mat-step [stepControl]="additionaldetails">
+				<form [formGroup]="additionaldetails">
+					<ng-template matStepLabel>Additional Details</ng-template>
+					<div class="form-fields">
+						<mat-form-field>
+							<div>
+								<input
+									matInput
+									placeholder="Additional Information"
+									formControlName="extra"
+									required
+								/>
+							</div>
+						</mat-form-field>
+					</div>
+					<div>
+						<button
+							mat-button
+							matStepperPrevious
+							class="form-buttons"
+						>
+							Back
+						</button>
+						<button mat-button matStepperNext class="submit-button">
+							Submit
+						</button>
+					</div>
+				</form>
+			</mat-step>
+			<mat-step>
+				<ng-template matStepLabel>Complete</ng-template>
+				<h2>Thank you for providing details.</h2>
+				<div>
+					<button
+						mat-button
+						(click)="stepper.reset()"
+						class="form-buttons"
+					>
+						Reset
+					</button>
+				</div>
+			</mat-step>
+		</mat-vertical-stepper>
+	</div>
+</main>

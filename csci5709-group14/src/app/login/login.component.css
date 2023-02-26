@@ -2,7 +2,7 @@
 	display: flex;
 	min-height: 50vh;
 	align-items: center;
-	background-image: url('../../assets/login-cruise-img-2.jpg');
+	background-image: url('../../assets/images/login-cruise-img-2.jpg');
 	background-position: 50%;
 	background-size: cover;
 }

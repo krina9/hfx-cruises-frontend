@@ -1,15 +1,18 @@
 <mat-toolbar color="primary" class="mat-elevation-z6">
-	<a routerLink="/" class="icon-container">
+	<div class="icon-container">
 		<mat-icon>directions_boat</mat-icon>
-		<span class="">HFX Cruise</span>
-	</a>
+
+		<a mat-button color="primary" class="nav-buttons heading">HFX Cruise</a>
+	</div>
 
 	<!-- <span class="nav-spacer"></span> -->
 	<div class="nav-items">
-		<a mat-button>Packages</a>
-		<a mat-button>Rent Your Cruise</a>
-		<a mat-button>Events</a>
-		<a routerLink="login" mat-button>Login</a>
+		<a mat-button color="primary" class="nav-buttons">Packages</a>
+		<a mat-button color="primary" class="nav-buttons">Rent Your Cruise</a>
+		<a mat-button color="primary" class="nav-buttons">Events</a>
+		<a mat-button color="primary" class="nav-buttons" routerLink="login"
+			>Login</a
+		>
 		<!-- <mat-checkbox id="check"></mat-checkbox>
 		<mat-icon for="check" class="material-symbols-rounded"> menu </mat-icon> -->
 	</div>
