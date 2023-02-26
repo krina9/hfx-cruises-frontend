@@ -1,0 +1,10 @@
+.example-card {
+  max-width: 50%;
+  margin-left: 25%;
+  margin-bottom: 2%;
+}
+
+.example-header-image {
+  background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKydNzoaNd7bkwENwlshdrHfsavKUloX5UMg&usqp=CAU');
+  background-size: cover;
+}
