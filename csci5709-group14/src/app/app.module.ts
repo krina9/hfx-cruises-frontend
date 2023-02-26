@@ -30,6 +30,7 @@ import { EventFormComponent } from './events/event-form/event-form.component';
 import { EventSubscribeComponent } from './events/event-subscribe/event-subscribe.component';
 import { EventHomeComponent } from './events/event-home/event-home.component';
 import { EventComponent } from './events/event/event.component';
+import { CruiesListComponent } from './cruies-list/cruies-list.component';
 
 @NgModule({
 	declarations: [
@@ -47,6 +48,7 @@ import { EventComponent } from './events/event/event.component';
 		EventSubscribeComponent,
 		EventHomeComponent,
 		EventComponent,
+  CruiesListComponent,
 	],
 	imports: [
 		BrowserModule,
@@ -58,13 +60,7 @@ import { EventComponent } from './events/event/event.component';
 		MatAutocompleteModule,
 		FormsModule,
 		ReactiveFormsModule,
-		MatInputModule,
-		MatPaginatorModule,
-		MatDialogModule,
-		MatSelectModule,
-		MatDatepickerModule,
-		MatNativeDateModule,
-		MatButtonModule,
+		MaterialModule,
 		MdbCarouselModule,
 	],
 	providers: [JobDetailsService],
