@@ -8,6 +8,9 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { JobDetailsComponent } from './job-details/job-details.component';
 import { JobFormComponent } from './job-form/job-form.component';
 import { LoginComponent } from './login/login.component';
+import { OwnerLeaseComponent } from './owner-lease/owner-lease.component';
+import { PaymentDetailsComponent } from './payment-details/payment-details.component';
+import { PersonalInformationComponent } from './personal-information/personal-information.component';
 import { SignupComponent } from './sigup/sigup.component';
 
 const routes: Routes = [
@@ -20,6 +23,9 @@ const routes: Routes = [
 	{ path: 'event', component: EventComponent },
 	{ path: 'cruiselist', component: CruiesListComponent },
 	{ path: 'cruisedetails', component: CruiesDetailsComponent },
+	{ path: 'ownerlease', component: OwnerLeaseComponent },
+	{ path: 'paymentdetails', component: PaymentDetailsComponent },
+	{ path: 'personalinfo', component: PersonalInformationComponent },
 ];
 
 @NgModule({

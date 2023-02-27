@@ -33,6 +33,9 @@ import { EventComponent } from './events/event/event.component';
 import { CruiesListComponent } from './cruies-list/cruies-list.component';
 import { CruiesDetailsComponent } from './cruies-details/cruies-details.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { OwnerLeaseComponent } from './owner-lease/owner-lease.component';
+import { PaymentDetailsComponent } from './payment-details/payment-details.component';
+import { PersonalInformationComponent } from './personal-information/personal-information.component';
 
 @NgModule({
 	declarations: [
@@ -52,6 +55,9 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 		EventComponent,
 		CruiesListComponent,
 		CruiesDetailsComponent,
+		OwnerLeaseComponent,
+		PaymentDetailsComponent,
+		PersonalInformationComponent,
 	],
 	imports: [
 		BrowserModule,
