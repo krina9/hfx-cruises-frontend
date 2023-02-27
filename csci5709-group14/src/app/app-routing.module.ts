@@ -4,11 +4,14 @@ import { CruiesDetailsComponent } from './cruies-details/cruies-details.componen
 import { CruiesListComponent } from './cruies-list/cruies-list.component';
 import { CruiseCareersComponent } from './cruise-careers/cruise-careers.component';
 import { EventComponent } from './events/event/event.component';
+import { FeedbackComponent } from './feedback/feedback.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { JobDetailsComponent } from './job-details/job-details.component';
 import { JobFormComponent } from './job-form/job-form.component';
 import { LoginComponent } from './login/login.component';
 import { OwnerLeaseComponent } from './owner-lease/owner-lease.component';
+import { PackageDetailsComponent } from './package-details/package-details.component';
+import { PackageListComponent } from './package-list/package-list.component';
 import { PaymentDetailsComponent } from './payment-details/payment-details.component';
 import { PersonalInformationComponent } from './personal-information/personal-information.component';
 import { SignupComponent } from './sigup/sigup.component';
@@ -26,10 +29,16 @@ const routes: Routes = [
 	{ path: 'ownerlease', component: OwnerLeaseComponent },
 	{ path: 'paymentdetails', component: PaymentDetailsComponent },
 	{ path: 'personalinfo', component: PersonalInformationComponent },
+	{ path: 'feedback', component: FeedbackComponent },
+	{ path: 'packagelist', component: PackageListComponent },
+	{ path: 'packagedetails', component: PackageDetailsComponent },
 ];
 
+RouterModule.forRoot(routes, {scrollPositionRestoration: 'enabled'});
 @NgModule({
-	imports: [RouterModule.forRoot(routes)],
+	imports: [RouterModule.forRoot(routes, {
+		scrollPositionRestoration: 'enabled', // Add options right here
+	  })],
 	exports: [RouterModule],
 })
 export class AppRoutingModule {}

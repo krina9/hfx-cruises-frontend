@@ -36,9 +36,12 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { OwnerLeaseComponent } from './owner-lease/owner-lease.component';
 import { PaymentDetailsComponent } from './payment-details/payment-details.component';
 import { PersonalInformationComponent } from './personal-information/personal-information.component';
+import { FeedbackComponent } from './feedback/feedback.component';
+import { PackageListComponent } from './package-list/package-list.component';
+import { PackageDetailsComponent } from './package-details/package-details.component';
 
 @NgModule({
-	declarations: [
+	declarations: [			
 		AppComponent,
 		CruiseCareersComponent,
 		JobDetailsComponent,
@@ -58,7 +61,10 @@ import { PersonalInformationComponent } from './personal-information/personal-in
 		OwnerLeaseComponent,
 		PaymentDetailsComponent,
 		PersonalInformationComponent,
-	],
+      FeedbackComponent,
+      PackageListComponent,
+      PackageDetailsComponent
+   ],
 	imports: [
 		BrowserModule,
 		AppRoutingModule,

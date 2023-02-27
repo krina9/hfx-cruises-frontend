@@ -23,7 +23,9 @@ export class PersonalInformationComponent implements OnInit {
 	constructor(private readonly router: Router) {}
 
 	ngOnInit() {}
-	onSubmit(f: NgForm) {}
+	onSubmit(f: NgForm) {
+		this.router.navigate(['paymentdetails']);
+	}
 
 	checkNumeric(event: any) {
 		if (event.keyCode > 47 && event.keyCode < 58) {
