@@ -25,7 +25,7 @@ const routes: Routes = [
 	{ path: 'signup', component: SignupComponent },
 	{ path: 'event', component: EventComponent },
 	{ path: 'cruiselist', component: CruiesListComponent },
-	{ path: 'cruisedetails', component: CruiesDetailsComponent },
+	{ path: 'cruisedetails/:id', component: CruiesDetailsComponent },
 	{ path: 'ownerlease', component: OwnerLeaseComponent },
 	{ path: 'paymentdetails', component: PaymentDetailsComponent },
 	{ path: 'personalinfo', component: PersonalInformationComponent },

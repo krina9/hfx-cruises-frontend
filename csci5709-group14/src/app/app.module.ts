@@ -39,6 +39,7 @@ import { PersonalInformationComponent } from './personal-information/personal-in
 import { FeedbackComponent } from './feedback/feedback.component';
 import { PackageListComponent } from './package-list/package-list.component';
 import { PackageDetailsComponent } from './package-details/package-details.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
 	declarations: [			
@@ -78,6 +79,7 @@ import { PackageDetailsComponent } from './package-details/package-details.compo
 		MaterialModule,
 		MdbCarouselModule,
 		FlexLayoutModule,
+		HttpClientModule
 	],
 	providers: [JobDetailsService],
 	bootstrap: [AppComponent],

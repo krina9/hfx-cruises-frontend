@@ -1,15 +1,24 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { CruiseService } from '../cruise.service';
 
 @Component({
 	selector: 'app-cruies-list',
 	templateUrl: './cruies-list.component.html',
 	styleUrls: ['./cruies-list.component.css'],
 })
-export class CruiesListComponent {
-	constructor(private router: Router) {}
+export class CruiesListComponent implements OnInit {
+	cruiseList: any = [];
 
-	public onClick(id: number) {
-		this.router.navigate(['cruisedetails']);
+	constructor(private router: Router, private cruiseService: CruiseService) {}
+
+	ngOnInit() {
+		this.getCruiseListData();
+	}
+
+	getCruiseListData() {
+		this.cruiseService.getCruiseList().subscribe((data: any) => {
+			this.cruiseList = data;
+		});
 	}
 }
