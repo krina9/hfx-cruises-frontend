@@ -11,6 +11,7 @@ import { MatInputModule } from '@angular/material/input';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MdbCarouselModule } from 'mdb-angular-ui-kit/carousel';
+import { HttpClientModule } from '@angular/common/http';
 
 import { JobDetailsService } from './job-details.service';
 import { FooterComponent } from './footer/footer.component';
@@ -39,9 +40,12 @@ import { PersonalInformationComponent } from './personal-information/personal-in
 import { FeedbackComponent } from './feedback/feedback.component';
 import { PackageListComponent } from './package-list/package-list.component';
 import { PackageDetailsComponent } from './package-details/package-details.component';
+import { OwnerConfirmationComponent } from './owner-confirmation/owner-confirmation.component';
+import { OwnerCancelComponent } from './owner-cancel/owner-cancel.component';
+import { OwnerUpdateComponent } from './owner-update/owner-update.component';
 
 @NgModule({
-	declarations: [			
+	declarations: [						
 		AppComponent,
 		CruiseCareersComponent,
 		JobDetailsComponent,
@@ -63,7 +67,10 @@ import { PackageDetailsComponent } from './package-details/package-details.compo
 		PersonalInformationComponent,
       FeedbackComponent,
       PackageListComponent,
-      PackageDetailsComponent
+      PackageDetailsComponent,
+      OwnerConfirmationComponent,
+      OwnerCancelComponent,
+      OwnerUpdateComponent
    ],
 	imports: [
 		BrowserModule,
@@ -78,6 +85,7 @@ import { PackageDetailsComponent } from './package-details/package-details.compo
 		MaterialModule,
 		MdbCarouselModule,
 		FlexLayoutModule,
+		HttpClientModule,
 	],
 	providers: [JobDetailsService],
 	bootstrap: [AppComponent],

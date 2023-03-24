@@ -15,6 +15,9 @@ import { PackageListComponent } from './package-list/package-list.component';
 import { PaymentDetailsComponent } from './payment-details/payment-details.component';
 import { PersonalInformationComponent } from './personal-information/personal-information.component';
 import { SignupComponent } from './sigup/sigup.component';
+import { OwnerConfirmationComponent } from './owner-confirmation/owner-confirmation.component';
+import { OwnerCancelComponent } from './owner-cancel/owner-cancel.component';
+import { OwnerUpdateComponent } from './owner-update/owner-update.component';
 
 const routes: Routes = [
 	{ path: '', component: HomepageComponent },
@@ -32,6 +35,9 @@ const routes: Routes = [
 	{ path: 'feedback', component: FeedbackComponent },
 	{ path: 'packagelist', component: PackageListComponent },
 	{ path: 'packagedetails', component: PackageDetailsComponent },
+	{ path: 'ownerconfirmation', component: OwnerConfirmationComponent},
+	{ path: 'ownerCancel', component: OwnerCancelComponent},
+	{ path: 'ownerUpdate', component: OwnerUpdateComponent},
 ];
 
 RouterModule.forRoot(routes, {scrollPositionRestoration: 'enabled'});

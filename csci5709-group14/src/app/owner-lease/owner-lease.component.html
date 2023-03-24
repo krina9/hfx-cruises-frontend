@@ -27,6 +27,7 @@
 	<form #form="ngForm" (ngSubmit)="onSubmit(form)">
 		<label> Cruise Name </label><br />
 		<input
+			[disabled]="disablebox"
 			name="cruisename"
 			ngModel
 			required
@@ -40,6 +41,7 @@
 
 		<label> Cruise Manufacturing Year </label><br />
 		<input
+			[disabled]="disablebox"
 			name="year"
 			ngModel
 			required
@@ -54,6 +56,7 @@
 
 		<label> Cruise Model Number </label><br />
 		<input
+			[disabled]="disablebox"
 			name="model"
 			ngModel
 			required
@@ -67,6 +70,7 @@
 
 		<label> Cruise Capacity </label><br />
 		<input
+			[disabled]="disablebox"
 			name="capacity"
 			ngModel
 			required
@@ -80,6 +84,7 @@
 
 		<label> Number of Rooms available </label><br />
 		<input
+			[disabled]="disablebox"
 			name="rooms"
 			ngModel
 			required
@@ -117,12 +122,10 @@
 		</p>
 		<br /><br />
 
-		<label> Upload Photos </label><br />
-		<input type="file" name="first" required />
-
 		<h2>Please enter personal details</h2>
 		<label> First Name </label><br />
 		<input
+		 	[disabled]="disablebox"
 			name="firstname"
 			ngModel
 			required
@@ -137,6 +140,7 @@
 
 		<label> Last Name </label><br />
 		<input
+			[disabled]="disablebox"
 			name="lastname"
 			ngModel
 			required
@@ -149,7 +153,7 @@
 		<br /><br />
 
 		<label> Email Address </label><br />
-		<input name="first" ngModel required [(ngModel)]="email" />
+		<input name="first" ngModel required [(ngModel)]="email" [disabled]="disablebox"/>
 		<p style="color: red" *ngIf="emailFail">
 			Please enter your email address.
 		</p>
@@ -157,6 +161,7 @@
 
 		<label> Phone Number </label><br />
 		<input
+			[disabled]="disablebox"
 			name="phone"
 			ngModel
 			required
@@ -170,6 +175,7 @@
 
 		<label> Business Company Name </label><br />
 		<input
+			[disabled]="disablebox"
 			name="companyname"
 			ngModel
 			[(ngModel)]="companyname"
@@ -177,6 +183,7 @@
 		/><br /><br />
 		<label> Business Registration Number </label><br />
 		<input
+			[disabled]="disablebox"
 			name="rnumber"
 			ngModel
 			required
@@ -188,7 +195,7 @@
 			class="cancel"
 			type="button"
 			(click)="onCancel()"
-			*ngIf="editmydetails"
+			*ngIf="id"
 		>
 			Cancel</button
 		><br />
