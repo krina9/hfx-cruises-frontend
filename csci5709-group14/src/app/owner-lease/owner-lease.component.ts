@@ -26,21 +26,10 @@ export class OwnerLeaseComponent implements OnInit {
 	phone = '';
 	companyname = '';
 	rnumber = '';
+	formfilled = false;
 	disablebox = false;
-	editmydetails = false;
-	idFail = false;
-	cruisenameFail = false;
-	yearFail = false;
-	modelFail = false;
-	capacityFail = false;
-	roomsFail = false;
-	fromAvailabilitFail = false;
-	toavailabilityFail = false;
-	firstnameFail = false;
-	lastnameFail = false;
-	emailFail = false;
-	phoneFail = false;
-	cruiseIdError = 'Please enter the Cruise ID.';
+	idfilled = false;
+	cruiseiderror = 'Please enter the Cruise ID.';
 
 	constructor(private readonly router: Router, 
 		private readonly http: HttpClient) {}
@@ -49,6 +38,7 @@ export class OwnerLeaseComponent implements OnInit {
 		this.id = '';
 	}
 	onSubmit(f: NgForm) {	
+		this.formfilled = true;
 		if(this.id){
 			this.http.post("http://localhost:3000/api/cruiseleaseupdate", {
 				cruiseID: this.id,
@@ -59,7 +49,8 @@ export class OwnerLeaseComponent implements OnInit {
 			});
 			this.router.navigate(['/ownerUpdate']);
 		}
-		else {
+		else if(this.checkValidation())
+			{
 			const cruiseID = Math.random().toString(36).slice(2);
 			this.cruiseowner = {
 				cruiseID: cruiseID,
@@ -87,10 +78,8 @@ export class OwnerLeaseComponent implements OnInit {
 	}
 
 	onSubmitlease() {
-		if (this.id.length < 1) {
-			this.idFail = true;
-			this.cruiseIdError = 'Please enter the Cruise ID.';
-		} else {
+		this.idfilled = true;
+		if(this.id.length > 0){
 			const cruiseId = {
 				cruiseID: this.id
 			}
@@ -109,10 +98,13 @@ export class OwnerLeaseComponent implements OnInit {
 				this.phone = response.phone;
 				this.companyname = response.companyname;
 				this.rnumber = response.rnumber;
-				
+				this.disablebuttons();
+					
+			}, error => {
+				this.id = "";
+				this.cruiseiderror = "Please enter correct cruise ID";
 			});
 		}
-		this.disablebuttons();
 	}
 
 	disablebuttons(){
@@ -127,20 +119,6 @@ export class OwnerLeaseComponent implements OnInit {
 			console.log(response);
 		});
 		this.router.navigate(['/ownerCancel']);
-	}
-
-	refreshErrorPage() {
-		this.cruisenameFail = false;
-		this.yearFail = false;
-		this.modelFail = false;
-		this.capacityFail = false;
-		this.roomsFail = false;
-		this.fromAvailabilitFail = false;
-		this.toavailabilityFail = false;
-		this.firstnameFail = false;
-		this.lastnameFail = false;
-		this.emailFail = false;
-		this.phoneFail = false;
 	}
 
 	checkAlphanumeric(event: any) {
@@ -167,5 +145,15 @@ export class OwnerLeaseComponent implements OnInit {
 			return true;
 		}
 		return false;
+	}
+
+	checkValidation(){
+		if(this.cruisename.length < 1 || this.year.length < 1 ||  this.model.length < 1 ||  this.capacity < 1 || 
+			this.rooms < 1 || this.fromavailability.length < 1 || this.toavailability.length < 1 || 
+			this.firstname.length < 1 || this.lastname.length < 1  || this.email.length < 1 
+			|| this.phone.length < 1 ){
+				return false;
+			}
+		return true;
 	}
 }

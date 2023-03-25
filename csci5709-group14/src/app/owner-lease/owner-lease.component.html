@@ -17,7 +17,7 @@
 			(keypress)="checkAlphanumeric($event)"
 		/>
 		<button type="submit" class="prebutton">Submit</button>
-		<p style="color: red" *ngIf="idFail">{{ cruiseIdError }}</p>
+		<p style="color: red" *ngIf="this.id.length < 1 && idfilled">{{cruiseiderror}}</p>
 	</form>
 </section>
 
@@ -34,7 +34,7 @@
 			[(ngModel)]="cruisename"
 			(keypress)="checkAlpha($event)"
 		/>
-		<p style="color: red" *ngIf="cruisenameFail">
+		<p style="color: red" *ngIf="cruisename.length < 1 && formfilled">
 			Please enter the Cruise Name.
 		</p>
 		<br /><br />
@@ -49,8 +49,8 @@
 			(keypress)="checkNumeric($event)"
 			maxlength="4"
 		/>
-		<p style="color: red" *ngIf="yearFail">
-			Please enter the Manufacturing year.
+		<p style="color: red" *ngIf="year.length != 4 && formfilled">
+			Please enter the Manufacturing year (YYYY).
 		</p>
 		<br /><br />
 
@@ -63,7 +63,7 @@
 			[(ngModel)]="model"
 			(keypress)="checkAlphanumeric($event)"
 		/>
-		<p style="color: red" *ngIf="modelFail">
+		<p style="color: red" *ngIf="model.length < 1 && formfilled">
 			Please the Cruise Model Number.
 		</p>
 		<br /><br />
@@ -77,7 +77,7 @@
 			[(ngModel)]="capacity"
 			(keypress)="checkNumeric($event)"
 		/>
-		<p style="color: red" *ngIf="capacityFail">
+		<p style="color: red" *ngIf="capacity < 1 && formfilled">
 			Please enter the Cruise capacity.
 		</p>
 		<br /><br />
@@ -91,7 +91,7 @@
 			[(ngModel)]="rooms"
 			(keypress)="checkNumeric($event)"
 		/>
-		<p style="color: red" *ngIf="roomsFail">
+		<p style="color: red" *ngIf="rooms < 1 && formfilled">
 			Please enter number of rooms in cruise.
 		</p>
 		<br /><br />
@@ -114,10 +114,10 @@
 			[(ngModel)]="toavailability"
 			min="2023-03-15"
 		/>
-		<p style="color: red" *ngIf="fromAvailabilitFail">
+		<p style="color: red" *ngIf="fromavailability.length < 1 && formfilled">
 			Please enter the from availability date.
 		</p>
-		<p style="color: red" *ngIf="toavailabilityFail">
+		<p style="color: red" *ngIf="toavailability.length < 1 && formfilled">
 			Please enter the to availability date.
 		</p>
 		<br /><br />
@@ -132,7 +132,7 @@
 			[(ngModel)]="firstname"
 			(keypress)="checkAlpha($event)"
 		/>
-		<p style="color: red" *ngIf="firstnameFail">
+		<p style="color: red" *ngIf="firstname.length < 1 && formfilled">
 			Please enter your first Name.
 		</p>
 		<br />
@@ -147,14 +147,14 @@
 			[(ngModel)]="lastname"
 			(keypress)="checkAlpha($event)"
 		/>
-		<p style="color: red" *ngIf="lastnameFail">
+		<p style="color: red" *ngIf="lastname.length < 1 && formfilled">
 			Please enter your Last Name.
 		</p>
 		<br /><br />
 
 		<label> Email Address </label><br />
 		<input name="first" ngModel required [(ngModel)]="email" [disabled]="disablebox"/>
-		<p style="color: red" *ngIf="emailFail">
+		<p style="color: red" *ngIf="email.length < 1 && formfilled">
 			Please enter your email address.
 		</p>
 		<br /><br />
@@ -168,7 +168,7 @@
 			[(ngModel)]="phone"
 			(keypress)="checkNumeric($event)"
 		/>
-		<p style="color: red" *ngIf="phoneFail">
+		<p style="color: red" *ngIf="phone.length < 1 && formfilled">
 			Please enter your phone number.
 		</p>
 		<br /><br />
