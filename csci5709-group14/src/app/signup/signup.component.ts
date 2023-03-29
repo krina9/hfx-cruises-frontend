@@ -2,16 +2,23 @@ import { Component } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
+import { AuthService } from '../Authentication/auth.service';
+
 @Component({
 	selector: 'app-signup',
-	templateUrl: './sigup.component.html',
-	styleUrls: ['./sigup.component.css'],
+	templateUrl: './signup.component.html',
+	styleUrls: ['./signup.component.css'],
 })
 export class SignupComponent {
 	signupForm!: FormGroup;
 	submitted = false;
+	hide: any;
 
-	constructor(private formBuilder: FormBuilder, private router: Router) {}
+	constructor(
+		private formBuilder: FormBuilder,
+		private router: Router,
+		private authService: AuthService
+	) {}
 
 	ngOnInit() {
 		this.signupForm = this.formBuilder.group(
@@ -50,16 +57,12 @@ export class SignupComponent {
 
 	onSignup() {
 		this.submitted = true;
-		console.log('here');
+		console.log(this.signupForm.status);
 		if (this.signupForm.invalid) {
+			console.log('invalid');
 			return;
 		}
-
-		// store user info in local storage
-		localStorage.setItem('user', JSON.stringify(this.signupForm.value));
-
-		// navigate to profile page
-		this.router.navigate(['/login']);
+		this.authService.addNewUser(this.signupForm.value);
 	}
 
 	// custom validator to check that two fields match

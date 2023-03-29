@@ -10,12 +10,7 @@
 				<div class="input-div">
 					<mat-form-field class="full-width" appearance="outline">
 						<mat-label>First Name</mat-label>
-						<input
-							formControlName="email"
-							matInput
-							required
-							email
-						/>
+						<input formControlName="firstName" matInput required />
 						<mat-error
 							class="error"
 							*ngIf="
@@ -46,12 +41,7 @@
 				<div class="input-div">
 					<mat-form-field class="full-width" appearance="outline">
 						<mat-label>Last Name</mat-label>
-						<input
-							formControlName="email"
-							matInput
-							required
-							email
-						/>
+						<input formControlName="lastName" matInput required />
 						<mat-error
 							class="error"
 							*ngIf="
@@ -115,7 +105,24 @@
 				<div class="input-div">
 					<mat-form-field class="full-width" appearance="outline">
 						<mat-label>Password</mat-label>
-						<input formControlName="password" matInput required />
+						<input
+							formControlName="password"
+							matInput
+							required
+							[type]="hide ? 'text' : 'password'"
+						/>
+						<button
+							mat-icon-button
+							type="button"
+							matSuffix
+							(click)="hide = !hide"
+							[attr.aria-label]="'Hide Password'"
+							[attr.aira-pressed]="!hide"
+						>
+							<mat-icon style="color: white">
+								{{ hide ? 'visibility' : 'visibility_off' }}
+							</mat-icon>
+						</button>
 						<mat-error
 							class="error"
 							*ngIf="
@@ -160,6 +167,7 @@
 							formControlName="confirmPassword"
 							matInput
 							required
+							type="password"
 						/>
 						<mat-error
 							class="error"

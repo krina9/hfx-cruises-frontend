@@ -7,6 +7,7 @@ import {
 	FormBuilder,
 } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { AuthService } from '../Authentication/auth.service';
 
 @Component({
 	selector: 'app-login',
@@ -20,8 +21,8 @@ export class LoginComponent implements OnInit {
 
 	constructor(
 		private formBuilder: FormBuilder,
-		private route: ActivatedRoute,
-		private router: Router
+		private router: Router,
+		private authService: AuthService
 	) {}
 
 	ngOnInit() {
@@ -46,17 +47,14 @@ export class LoginComponent implements OnInit {
 	}
 
 	onLogin() {
-		console.log('submitted');
+		console.log(this.loginForm);
 		this.submitted = true;
+		console.log('loginForm status', this.loginForm.status);
 
 		if (this.loginForm.invalid) {
 			return;
 		}
 
-		// store user info in local storage
-		localStorage.setItem('user', JSON.stringify(this.loginForm.value));
-
-		// navigate to profile page
-		this.router.navigate(['/homepage']);
+		this.authService.login(this.loginForm.value);
 	}
 }
