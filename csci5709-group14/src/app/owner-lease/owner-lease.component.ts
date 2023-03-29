@@ -46,8 +46,8 @@ export class OwnerLeaseComponent implements OnInit {
 				toavailability: this.toavailability,
 			}).subscribe(response => {
 				console.log(response);
+				this.router.navigate(['/ownerUpdate']);
 			});
-			this.router.navigate(['/ownerUpdate']);
 		}
 		else if(this.checkValidation())
 			{
@@ -71,8 +71,8 @@ export class OwnerLeaseComponent implements OnInit {
 			console.log(this.cruiseowner);
 			this.http.post("http://localhost:3000/api/cruiseleaseregistration", this.cruiseowner).subscribe(response => {
 				console.log(response);
+				this.router.navigate(['/ownerconfirmation']);
 			});
-			this.router.navigate(['/ownerconfirmation']);
 		}
 
 	}
@@ -116,9 +116,8 @@ export class OwnerLeaseComponent implements OnInit {
 			cruiseID: this.id
 		}
 		this.http.post("http://localhost:3000/api/cruiseleasedelete", cancelID).subscribe(response => {
-			console.log(response);
+			this.router.navigate(['/ownerCancel']);
 		});
-		this.router.navigate(['/ownerCancel']);
 	}
 
 	checkAlphanumeric(event: any) {

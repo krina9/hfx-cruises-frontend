@@ -18,6 +18,7 @@ import { SignupComponent } from './sigup/sigup.component';
 import { OwnerConfirmationComponent } from './owner-confirmation/owner-confirmation.component';
 import { OwnerCancelComponent } from './owner-cancel/owner-cancel.component';
 import { OwnerUpdateComponent } from './owner-update/owner-update.component';
+import { FeedbackConfirmationComponent } from './feedback/feedback-confirmation/feedback-confirmation.component';
 
 const routes: Routes = [
 	{ path: '', component: HomepageComponent },
@@ -38,6 +39,7 @@ const routes: Routes = [
 	{ path: 'ownerconfirmation', component: OwnerConfirmationComponent},
 	{ path: 'ownerCancel', component: OwnerCancelComponent},
 	{ path: 'ownerUpdate', component: OwnerUpdateComponent},
+	{ path: 'feedbacktaken', component: FeedbackConfirmationComponent},
 ];
 
 RouterModule.forRoot(routes, {scrollPositionRestoration: 'enabled'});
