@@ -9,14 +9,32 @@
 
 	<!-- <span class="nav-spacer"></span> -->
 	<div class="nav-items">
-		<a mat-button color="primary" class="nav-buttons" routerLink="packagelist"
-			>Packages</a>
+		<a
+			mat-button
+			color="primary"
+			class="nav-buttons"
+			routerLink="packagelist"
+			>Packages</a
+		>
 		<a mat-button color="primary" class="nav-buttons">Rent Your Cruise</a>
 		<a mat-button color="primary" class="nav-buttons" routerLink="event"
 			>Events</a
 		>
-		<a mat-button color="primary" class="nav-buttons" routerLink="login"
+		<a
+			mat-button
+			color="primary"
+			class="nav-buttons"
+			routerLink="login"
+			*ngIf="!isUserAuthenticated"
 			>Login</a
+		>
+		<a
+			mat-button
+			color="primary"
+			class="nav-buttons"
+			*ngIf="isUserAuthenticated"
+			(click)="logout()"
+			>Logout</a
 		>
 		<!-- <mat-checkbox id="check"></mat-checkbox>
 		<mat-icon for="check" class="material-symbols-rounded"> menu </mat-icon> -->

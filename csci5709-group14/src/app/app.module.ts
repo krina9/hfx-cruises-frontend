@@ -24,7 +24,7 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { LoginComponent } from './login/login.component';
 import { MaterialModule } from './material/material.module';
 import { NavHeaderComponent } from './nav-header/nav-header.component';
-import { SignupComponent } from './sigup/sigup.component';
+import { SignupComponent } from './signup/signup.component';
 import { EventContactComponent } from './events/event-contact/event-contact.component';
 import { EventFormComponent } from './events/event-form/event-form.component';
 import { EventSubscribeComponent } from './events/event-subscribe/event-subscribe.component';
@@ -39,10 +39,11 @@ import { PersonalInformationComponent } from './personal-information/personal-in
 import { FeedbackComponent } from './feedback/feedback.component';
 import { PackageListComponent } from './package-list/package-list.component';
 import { PackageDetailsComponent } from './package-details/package-details.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AuthInterceptor } from './Authentication/auth.interceptor';
 
 @NgModule({
-	declarations: [			
+	declarations: [
 		AppComponent,
 		CruiseCareersComponent,
 		JobDetailsComponent,
@@ -62,10 +63,10 @@ import { HttpClientModule } from '@angular/common/http';
 		OwnerLeaseComponent,
 		PaymentDetailsComponent,
 		PersonalInformationComponent,
-      FeedbackComponent,
-      PackageListComponent,
-      PackageDetailsComponent
-   ],
+		FeedbackComponent,
+		PackageListComponent,
+		PackageDetailsComponent,
+	],
 	imports: [
 		BrowserModule,
 		AppRoutingModule,
@@ -79,9 +80,16 @@ import { HttpClientModule } from '@angular/common/http';
 		MaterialModule,
 		MdbCarouselModule,
 		FlexLayoutModule,
-		HttpClientModule
+		HttpClientModule,
 	],
-	providers: [JobDetailsService],
+	providers: [
+		{
+			provide: HTTP_INTERCEPTORS,
+			useClass: AuthInterceptor,
+			multi: true,
+		},
+		JobDetailsService,
+	],
 	bootstrap: [AppComponent],
 })
 export class AppModule {}
