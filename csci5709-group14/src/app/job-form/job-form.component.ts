@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Router } from '@angular/router';
-import { JobDetailsService } from '../job-details.service';
+import { JobDetailsService } from '../services/job-details.service';
+import { JobApplicationService } from '../services/job-application.service';
 
 @Component({
   selector: 'app-job-form',
@@ -16,9 +17,9 @@ export class JobFormComponent implements OnInit {
   jobdetails: any;
 
   constructor(
-    public dialogRef: MatDialogRef<JobFormComponent>, private fb: FormBuilder, private jsonJobDetails: JobDetailsService) {
+    public dialogRef: MatDialogRef<JobFormComponent>, private fb: FormBuilder,private jobApplicationService: JobApplicationService, private jsonJobDetails: JobDetailsService) {
     this.jobdetails = jsonJobDetails.jobJson;
-  }
+    }
 
   ngOnInit() {
     this.myForm();
@@ -39,8 +40,11 @@ export class JobFormComponent implements OnInit {
     this.formSubmitted = true;
     console.log(this.requiredForm.value)
     if (this.requiredForm.status == "VALID") {
-      this.formSubmitted = false;
-      this.jobformsuccess = true;
+      this.jobApplicationService.jobApplicationForm(this.requiredForm.value).subscribe((data: any) => {
+        this.formSubmitted = false;
+        this.jobformsuccess = true;
+      });
+
     }
   }
 

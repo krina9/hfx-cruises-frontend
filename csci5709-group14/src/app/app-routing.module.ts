@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { RouteGuard } from './Authentication/route-guard';
 import { CruiesDetailsComponent } from './cruies-details/cruies-details.component';
 import { CruiesListComponent } from './cruies-list/cruies-list.component';
 import { CruiseCareersComponent } from './cruise-careers/cruise-careers.component';
@@ -14,7 +15,7 @@ import { PackageDetailsComponent } from './package-details/package-details.compo
 import { PackageListComponent } from './package-list/package-list.component';
 import { PaymentDetailsComponent } from './payment-details/payment-details.component';
 import { PersonalInformationComponent } from './personal-information/personal-information.component';
-import { SignupComponent } from './sigup/sigup.component';
+import { SignupComponent } from './signup/signup.component';
 import { OwnerConfirmationComponent } from './owner-confirmation/owner-confirmation.component';
 import { OwnerCancelComponent } from './owner-cancel/owner-cancel.component';
 import { OwnerUpdateComponent } from './owner-update/owner-update.component';
@@ -29,10 +30,18 @@ const routes: Routes = [
 	{ path: 'signup', component: SignupComponent },
 	{ path: 'event', component: EventComponent },
 	{ path: 'cruiselist', component: CruiesListComponent },
-	{ path: 'cruisedetails', component: CruiesDetailsComponent },
+	{ path: 'cruisedetails/:id', component: CruiesDetailsComponent },
 	{ path: 'ownerlease', component: OwnerLeaseComponent },
-	{ path: 'paymentdetails', component: PaymentDetailsComponent },
-	{ path: 'personalinfo', component: PersonalInformationComponent },
+	{
+		path: 'paymentdetails',
+		component: PaymentDetailsComponent,
+		canActivate: [RouteGuard],
+	},
+	{
+		path: 'personalinfo',
+		component: PersonalInformationComponent,
+		canActivate: [RouteGuard],
+	},
 	{ path: 'feedback', component: FeedbackComponent },
 	{ path: 'packagelist', component: PackageListComponent },
 	{ path: 'packagedetails', component: PackageDetailsComponent },
@@ -42,11 +51,14 @@ const routes: Routes = [
 	{ path: 'feedbacktaken', component: FeedbackConfirmationComponent},
 ];
 
-RouterModule.forRoot(routes, {scrollPositionRestoration: 'enabled'});
+RouterModule.forRoot(routes, { scrollPositionRestoration: 'enabled' });
 @NgModule({
-	imports: [RouterModule.forRoot(routes, {
-		scrollPositionRestoration: 'enabled', // Add options right here
-	  })],
+	imports: [
+		RouterModule.forRoot(routes, {
+			scrollPositionRestoration: 'enabled', // Add options right here
+		}),
+	],
 	exports: [RouterModule],
+	providers: [RouteGuard],
 })
 export class AppRoutingModule {}

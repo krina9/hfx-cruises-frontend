@@ -11,9 +11,8 @@ import { MatInputModule } from '@angular/material/input';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MdbCarouselModule } from 'mdb-angular-ui-kit/carousel';
-import { HttpClientModule } from '@angular/common/http';
 
-import { JobDetailsService } from './job-details.service';
+import { JobDetailsService } from './services/job-details.service';
 import { FooterComponent } from './footer/footer.component';
 import { JobFormComponent } from './job-form/job-form.component';
 import { MatDialogModule } from '@angular/material/dialog';
@@ -25,7 +24,7 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { LoginComponent } from './login/login.component';
 import { MaterialModule } from './material/material.module';
 import { NavHeaderComponent } from './nav-header/nav-header.component';
-import { SignupComponent } from './sigup/sigup.component';
+import { SignupComponent } from './signup/signup.component';
 import { EventContactComponent } from './events/event-contact/event-contact.component';
 import { EventFormComponent } from './events/event-form/event-form.component';
 import { EventSubscribeComponent } from './events/event-subscribe/event-subscribe.component';
@@ -44,8 +43,11 @@ import { OwnerConfirmationComponent } from './owner-confirmation/owner-confirmat
 import { OwnerCancelComponent } from './owner-cancel/owner-cancel.component';
 import { OwnerUpdateComponent } from './owner-update/owner-update.component';
 
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AuthInterceptor } from './Authentication/auth.interceptor';
+
 @NgModule({
-	declarations: [						
+	declarations: [
 		AppComponent,
 		CruiseCareersComponent,
 		JobDetailsComponent,
@@ -65,12 +67,12 @@ import { OwnerUpdateComponent } from './owner-update/owner-update.component';
 		OwnerLeaseComponent,
 		PaymentDetailsComponent,
 		PersonalInformationComponent,
-      FeedbackComponent,
-      PackageListComponent,
-      PackageDetailsComponent,
-      OwnerConfirmationComponent,
-      OwnerCancelComponent,
-      OwnerUpdateComponent
+      	FeedbackComponent,
+      	PackageListComponent,
+      	PackageDetailsComponent,
+      	OwnerConfirmationComponent,
+      	OwnerCancelComponent,
+      	OwnerUpdateComponent
    ],
 	imports: [
 		BrowserModule,
@@ -87,7 +89,14 @@ import { OwnerUpdateComponent } from './owner-update/owner-update.component';
 		FlexLayoutModule,
 		HttpClientModule,
 	],
-	providers: [JobDetailsService],
+	providers: [
+		{
+			provide: HTTP_INTERCEPTORS,
+			useClass: AuthInterceptor,
+			multi: true,
+		},
+		JobDetailsService,
+	],
 	bootstrap: [AppComponent],
 })
 export class AppModule {}
