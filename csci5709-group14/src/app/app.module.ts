@@ -12,7 +12,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MdbCarouselModule } from 'mdb-angular-ui-kit/carousel';
 
-import { JobDetailsService } from './job-details.service';
+import { JobDetailsService } from './services/job-details.service';
 import { FooterComponent } from './footer/footer.component';
 import { JobFormComponent } from './job-form/job-form.component';
 import { MatDialogModule } from '@angular/material/dialog';
