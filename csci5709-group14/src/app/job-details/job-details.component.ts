@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { MatDialog, MatDialogConfig,MatDialogRef  } from '@angular/material/dialog';
-import { JobDetailsService } from '../job-details.service';
+import { JobDetailsService } from '../services/job-details.service';
 import { JobFormComponent } from '../job-form/job-form.component';
 
 

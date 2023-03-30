@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { JobJsonService } from './job-json.service';
+import { CarrersService } from './carrers.service';
 
-describe('JobJsonService', () => {
-  let service: JobJsonService;
+describe('CarrersService', () => {
+  let service: CarrersService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(JobJsonService);
+    service = TestBed.inject(CarrersService);
   });
 
   it('should be created', () => {
