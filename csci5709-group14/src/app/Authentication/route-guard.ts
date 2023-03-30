@@ -23,7 +23,7 @@ export class RouteGuard implements CanActivate {
 		| UrlTree {
 		const isAuthenticated = this.authService.getIsAuthenticated();
 		if (!isAuthenticated) {
-			this.route.navigate(['/']);
+			this.route.navigate(['/login']);
 		}
 		return isAuthenticated;
 	}
