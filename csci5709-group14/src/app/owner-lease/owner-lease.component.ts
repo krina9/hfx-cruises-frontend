@@ -3,7 +3,8 @@ import { NgForm } from '@angular/forms';
 import { Route, Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 
-import { Cruiseowner } from '../service/cruiseowner';
+import { Cruiseowner } from '../services/cruiseowner';
+import { CruisseLeaseService } from '../services/cruisse-lease.service';
 
 @Component({
 	selector: 'app-owner-lease',
@@ -12,7 +13,7 @@ import { Cruiseowner } from '../service/cruiseowner';
 })
 export class OwnerLeaseComponent implements OnInit {
 	cruiseowner?: Cruiseowner;
-	id = '';
+	id: string = '';
 	cruisename = '';
 	year = '';
 	model = '';
@@ -32,7 +33,8 @@ export class OwnerLeaseComponent implements OnInit {
 	cruiseiderror = 'Please enter the Cruise ID.';
 
 	constructor(private readonly router: Router, 
-		private readonly http: HttpClient) {}
+		private readonly http: HttpClient, 
+		private leaseService: CruisseLeaseService) {}
 
 	ngOnInit() {
 		this.id = '';
@@ -71,6 +73,7 @@ export class OwnerLeaseComponent implements OnInit {
 			console.log(this.cruiseowner);
 			this.http.post("http://localhost:3000/api/cruiseleaseregistration", this.cruiseowner).subscribe(response => {
 				console.log(response);
+				this.leaseService.setId(cruiseID);
 				this.router.navigate(['/ownerconfirmation']);
 			});
 		}

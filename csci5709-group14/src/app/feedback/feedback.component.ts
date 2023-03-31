@@ -4,7 +4,7 @@ import { Route, Router} from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 
 import { FeedbackConfirmationComponent } from './feedback-confirmation/feedback-confirmation.component';
-import { Feedback } from '../service/feedback';
+import { Feedback } from '../services/feedback';
 
 @Component({
   selector: 'app-feedback',
