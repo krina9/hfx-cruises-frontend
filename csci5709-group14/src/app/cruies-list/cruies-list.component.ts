@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { CruiseService } from '../cruise.service';
+import { CruiseService } from '../services/cruise.service';
 
 @Component({
 	selector: 'app-cruies-list',
