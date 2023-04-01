@@ -1,3 +1,5 @@
+// Author: Karan Aggarwal (B00912580)
+
 import { Component, OnInit } from '@angular/core';
 
 @Component({

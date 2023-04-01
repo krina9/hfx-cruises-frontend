@@ -1,23 +1,28 @@
-.cruise {
-	padding-top: 6%;
-	padding-left: 1%;
-	padding-right: 1%;
-}
-img {
+/*Author: Karan Aggarwal (B00912580) */
+.bg {
+    background-image: url('../../assets/images/lease_bg.jpg');
+	position: fixed;
+	top: 0;
+	left: 0;
 	width: 100%;
-	height: 250px;
-	border-radius: 2%;
+	height: 100%;
+	background-size: cover;
+	background-position: center;
+	z-index: -1;
 }
+
 .editlease {
+	color: rgba(255, 255, 255, 0.704);
+    background-color: rgba(3, 13, 17, 0.718);
+    -webkit-box-shadow: 0px 0px 10px 4px rgba(0, 0, 0, 0.5);
+    box-shadow:0px 0px 10px 4px rgba(0, 0, 0, 0.5);
 	padding-top: 1%;
 	padding-bottom: 2%;
 	padding-left: 2%;
 	padding-right: 2%;
-	background-color: white;
 	font-family: 'Lorem Ipsum';
 	max-width: 80%;
 	width: 90%;
-	margin-top: 4%;
 	margin-left: auto;
 	margin-right: auto;
 	margin-bottom: 2px;
@@ -26,13 +31,15 @@ img {
 }
 
 .leaseform {
+	color: rgba(255, 255, 255, 0.704);
+    background-color: rgba(3, 13, 17, 0.718);
+    -webkit-box-shadow: 0px 0px 10px 4px rgba(0, 0, 0, 0.5);
+    box-shadow:0px 0px 10px 4px rgba(0, 0, 0, 0.5);
 	padding: 2%;
-	background-color: white;
 	font-family: 'Lorem Ipsum';
 	max-width: 80%;
 	width: 90%;
 	margin: 0 auto;
-	margin-bottom: 7%;
 	box-shadow: 1px 1px 4px rgba(0, 0, 0.15);
 }
 
@@ -53,36 +60,51 @@ input {
 }
 
 .prebutton {
-	background-color: rgb(51, 102, 255);
-	color: white;
-	padding: 7px 32px;
-	text-align: center;
-	display: inline-block;
-	font-size: 16px;
-	margin-left: 40px;
-	cursor: pointer;
-	border-radius: 10%;
+    background: #05a7f2;
+    border: 1px solid #05a7f2;
+    border-radius: 6px;
+    box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
+    box-sizing: border-box;
+    color: #FFFFFF; 
+    color: white;
+    padding: 7px 32px;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 10%;
+	margin-left: 10px;
 }
 
 .submit {
-	background-color: rgb(51, 102, 255);
-	color: white;
-	padding: 7px 32px;
-	text-align: center;
-	display: inline-block;
-	font-size: 16px;
-	cursor: pointer;
-	border-radius: 10%;
+    background: #05a7f2;
+    border: 1px solid #05a7f2;
+    border-radius: 6px;
+    box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
+    box-sizing: border-box;
+    color: #FFFFFF; 
+    color: white;
+    padding: 7px 32px;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 10%;
 }
 
 .cancel {
-	background-color: rgb(51, 102, 255);
-	color: white;
-	padding: 7px 32px;
-	text-align: center;
-	display: inline-block;
-	font-size: 16px;
-	cursor: pointer;
-	border-radius: 10%;
+    background: #f20505;
+    border: 1px solid #05a7f2;
+    border-radius: 6px;
+    box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
+    box-sizing: border-box;
+    color: #FFFFFF; 
+    color: white;
+    padding: 7px 32px;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 10%;
 	margin-left: 40px;
 }
