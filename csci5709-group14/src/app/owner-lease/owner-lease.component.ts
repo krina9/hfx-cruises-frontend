@@ -3,7 +3,7 @@ import { NgForm } from '@angular/forms';
 import { Route, Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 
-import { Cruiseowner } from '../service/cruiseowner';
+import { Cruiseowner } from '../services/cruiseowner';
 
 @Component({
 	selector: 'app-owner-lease',
