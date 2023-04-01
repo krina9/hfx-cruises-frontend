@@ -1,3 +1,5 @@
+// Author: Karan Aggarwal (B00912580)
+
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';

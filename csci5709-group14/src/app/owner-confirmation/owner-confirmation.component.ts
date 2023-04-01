@@ -1,3 +1,5 @@
+// Author: Karan Aggarwal (B00912580)
+
 import { Component, OnInit } from '@angular/core';
 import { CruisseLeaseService } from '../services/cruisse-lease.service';
 
