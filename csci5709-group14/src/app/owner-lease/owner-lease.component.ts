@@ -3,7 +3,7 @@ import { NgForm } from '@angular/forms';
 import { Route, Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 
-import { Cruiseowner } from '../service/cruiseowner';
+import { Cruiseowner } from '../services/cruiseowner';
 
 @Component({
 	selector: 'app-owner-lease',
@@ -31,26 +31,28 @@ export class OwnerLeaseComponent implements OnInit {
 	idfilled = false;
 	cruiseiderror = 'Please enter the Cruise ID.';
 
-	constructor(private readonly router: Router, 
-		private readonly http: HttpClient) {}
+	constructor(
+		private readonly router: Router,
+		private readonly http: HttpClient
+	) {}
 
 	ngOnInit() {
 		this.id = '';
 	}
-	onSubmit(f: NgForm) {	
+	onSubmit(f: NgForm) {
 		this.formfilled = true;
-		if(this.id){
-			this.http.post("http://localhost:3000/api/cruiseleaseupdate", {
-				cruiseID: this.id,
-				fromavailability: this.fromavailability,
-				toavailability: this.toavailability,
-			}).subscribe(response => {
-				console.log(response);
-				this.router.navigate(['/ownerUpdate']);
-			});
-		}
-		else if(this.checkValidation())
-			{
+		if (this.id) {
+			this.http
+				.post('http://localhost:3000/api/cruiseleaseupdate', {
+					cruiseID: this.id,
+					fromavailability: this.fromavailability,
+					toavailability: this.toavailability,
+				})
+				.subscribe((response) => {
+					console.log(response);
+					this.router.navigate(['/ownerUpdate']);
+				});
+		} else if (this.checkValidation()) {
 			const cruiseID = Math.random().toString(36).slice(2);
 			this.cruiseowner = {
 				cruiseID: cruiseID,
@@ -66,58 +68,71 @@ export class OwnerLeaseComponent implements OnInit {
 				email: this.email,
 				phone: this.phone,
 				companyname: this.companyname,
-				rnumber: this.rnumber
-			}
+				rnumber: this.rnumber,
+			};
 			console.log(this.cruiseowner);
-			this.http.post("http://localhost:3000/api/cruiseleaseregistration", this.cruiseowner).subscribe(response => {
-				console.log(response);
-				this.router.navigate(['/ownerconfirmation']);
-			});
+			this.http
+				.post(
+					'http://localhost:3000/api/cruiseleaseregistration',
+					this.cruiseowner
+				)
+				.subscribe((response) => {
+					console.log(response);
+					this.router.navigate(['/ownerconfirmation']);
+				});
 		}
-
 	}
 
 	onSubmitlease() {
 		this.idfilled = true;
-		if(this.id.length > 0){
+		if (this.id.length > 0) {
 			const cruiseId = {
-				cruiseID: this.id
-			}
-			this.http.post<Cruiseowner>("http://localhost:3000/api/cruiseleasefetch", cruiseId).subscribe(response => {
-				this.id = response.cruiseID;
-				this.cruisename = response.cruisename;
-				this.year = response.year;
-				this.model = response.model;
-				this.capacity = response.capacity;
-				this.rooms = response.rooms;
-				this.fromavailability = response.fromavailability;
-				this.toavailability = response.toavailability;
-				this.firstname = response.firstname;
-				this.lastname = response.lastname;
-				this.email = response.email;
-				this.phone = response.phone;
-				this.companyname = response.companyname;
-				this.rnumber = response.rnumber;
-				this.disablebuttons();
-					
-			}, error => {
-				this.id = "";
-				this.cruiseiderror = "Please enter correct cruise ID";
-			});
+				cruiseID: this.id,
+			};
+			this.http
+				.post<Cruiseowner>(
+					'http://localhost:3000/api/cruiseleasefetch',
+					cruiseId
+				)
+				.subscribe(
+					(response) => {
+						this.id = response.cruiseID;
+						this.cruisename = response.cruisename;
+						this.year = response.year;
+						this.model = response.model;
+						this.capacity = response.capacity;
+						this.rooms = response.rooms;
+						this.fromavailability = response.fromavailability;
+						this.toavailability = response.toavailability;
+						this.firstname = response.firstname;
+						this.lastname = response.lastname;
+						this.email = response.email;
+						this.phone = response.phone;
+						this.companyname = response.companyname;
+						this.rnumber = response.rnumber;
+						this.disablebuttons();
+					},
+					(error) => {
+						this.id = '';
+						this.cruiseiderror = 'Please enter correct cruise ID';
+					}
+				);
 		}
 	}
 
-	disablebuttons(){
+	disablebuttons() {
 		this.disablebox = true;
 	}
 
 	onCancel() {
 		const cancelID = {
-			cruiseID: this.id
-		}
-		this.http.post("http://localhost:3000/api/cruiseleasedelete", cancelID).subscribe(response => {
-			this.router.navigate(['/ownerCancel']);
-		});
+			cruiseID: this.id,
+		};
+		this.http
+			.post('http://localhost:3000/api/cruiseleasedelete', cancelID)
+			.subscribe((response) => {
+				this.router.navigate(['/ownerCancel']);
+			});
 	}
 
 	checkAlphanumeric(event: any) {
@@ -146,13 +161,22 @@ export class OwnerLeaseComponent implements OnInit {
 		return false;
 	}
 
-	checkValidation(){
-		if(this.cruisename.length < 1 || this.year.length < 1 ||  this.model.length < 1 ||  this.capacity < 1 || 
-			this.rooms < 1 || this.fromavailability.length < 1 || this.toavailability.length < 1 || 
-			this.firstname.length < 1 || this.lastname.length < 1  || this.email.length < 1 
-			|| this.phone.length < 1 ){
-				return false;
-			}
+	checkValidation() {
+		if (
+			this.cruisename.length < 1 ||
+			this.year.length < 1 ||
+			this.model.length < 1 ||
+			this.capacity < 1 ||
+			this.rooms < 1 ||
+			this.fromavailability.length < 1 ||
+			this.toavailability.length < 1 ||
+			this.firstname.length < 1 ||
+			this.lastname.length < 1 ||
+			this.email.length < 1 ||
+			this.phone.length < 1
+		) {
+			return false;
+		}
 		return true;
 	}
 }

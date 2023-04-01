@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
-import { CruiseService } from '../cruise.service';
+import { CruiseService } from '../services/cruise.service';
 
 @Component({
 	selector: 'app-cruies-details',
@@ -11,14 +11,18 @@ export class CruiesDetailsComponent implements OnInit {
 	gridColumns = 2;
 	cruiseDetails: any = {};
 	cruise: any = {};
-	
-	constructor(private router: Router, private activatedRoute: ActivatedRoute, private cruiseService: CruiseService) {}
+
+	constructor(
+		private router: Router,
+		private activatedRoute: ActivatedRoute,
+		private cruiseService: CruiseService
+	) {}
 
 	ngOnInit() {
 		this.activatedRoute.params.subscribe((params: Params) => {
-			const id: string = params["id"];
+			const id: string = params['id'];
 			this.getCruiseDetails(id);
-		});		
+		});
 	}
 
 	getCruiseDetails(id: string) {

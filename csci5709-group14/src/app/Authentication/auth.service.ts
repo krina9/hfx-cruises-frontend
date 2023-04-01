@@ -8,7 +8,7 @@ import { IUser } from '../signup/IUser';
 	providedIn: 'root',
 })
 export class AuthService {
-	apiUrl = 'http://localhost:3000/api';
+	apiUrl = 'https://hfxcruise-group14-backend.onrender.com/api';
 
 	private token!: string;
 	private authSubscription = new Subject<boolean>();
