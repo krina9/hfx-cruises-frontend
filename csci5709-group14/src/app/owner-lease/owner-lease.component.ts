@@ -1,3 +1,4 @@
+// Author: Karan Aggarwal (B00912580)
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Route, Router } from '@angular/router';
@@ -42,7 +43,7 @@ export class OwnerLeaseComponent implements OnInit {
 	onSubmit(f: NgForm) {	
 		this.formfilled = true;
 		if(this.id){
-			this.http.post("http://localhost:3000/api/cruiseleaseupdate", {
+			this.http.post("https://hfxcruise-group14-backend.onrender.com/api/cruiseleaseupdate", {
 				cruiseID: this.id,
 				fromavailability: this.fromavailability,
 				toavailability: this.toavailability,
@@ -71,7 +72,7 @@ export class OwnerLeaseComponent implements OnInit {
 				rnumber: this.rnumber
 			}
 			console.log(this.cruiseowner);
-			this.http.post("http://localhost:3000/api/cruiseleaseregistration", this.cruiseowner).subscribe(response => {
+			this.http.post("https://hfxcruise-group14-backend.onrender.com/api/cruiseleaseregistration", this.cruiseowner).subscribe(response => {
 				console.log(response);
 				this.leaseService.setId(cruiseID);
 				this.router.navigate(['/ownerconfirmation']);
@@ -86,7 +87,7 @@ export class OwnerLeaseComponent implements OnInit {
 			const cruiseId = {
 				cruiseID: this.id
 			}
-			this.http.post<Cruiseowner>("http://localhost:3000/api/cruiseleasefetch", cruiseId).subscribe(response => {
+			this.http.post<Cruiseowner>("https://hfxcruise-group14-backend.onrender.com/api/cruiseleasefetch", cruiseId).subscribe(response => {
 				this.id = response.cruiseID;
 				this.cruisename = response.cruisename;
 				this.year = response.year;
@@ -118,7 +119,7 @@ export class OwnerLeaseComponent implements OnInit {
 		const cancelID = {
 			cruiseID: this.id
 		}
-		this.http.post("http://localhost:3000/api/cruiseleasedelete", cancelID).subscribe(response => {
+		this.http.post("https://hfxcruise-group14-backend.onrender.com/api/cruiseleasedelete", cancelID).subscribe(response => {
 			this.router.navigate(['/ownerCancel']);
 		});
 	}
