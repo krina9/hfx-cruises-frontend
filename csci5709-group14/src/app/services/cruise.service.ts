@@ -1,12 +1,13 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { BACKEND_URL } from './backend-url';
 
 @Injectable({
 	providedIn: 'root',
 })
 export class CruiseService {
-	apiUrl = 'http://localhost:3000/api';
+	apiUrl = BACKEND_URL;
 
 	constructor(private http: HttpClient) {}
 

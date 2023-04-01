@@ -1,27 +1,25 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-
+import { BACKEND_URL } from './backend-url';
 
 @Injectable({
-  providedIn: 'root'
+	providedIn: 'root',
 })
 export class CarrersService {
+	apiUrl = BACKEND_URL;
 
- apiUrl = "http://localhost:3000/api";
+	constructor(private http: HttpClient) {}
 
-  constructor(private http: HttpClient) { }
+	CareersList(): Observable<any> {
+		return this.http.get(this.apiUrl + '/careersList/');
+	}
 
-  CareersList() : Observable<any> {
-    return this.http.get(this.apiUrl + '/careersList/');
-  }
+	JobLocations(): Observable<any> {
+		return this.http.get(this.apiUrl + '/jobLocations/');
+	}
 
-  JobLocations() : Observable<any> {
-    return this.http.get(this.apiUrl + '/jobLocations/');
-  }
-
-  JobTitles(): Observable<any> {
-    return this.http.get(this.apiUrl + '/jobTitles/');
-  }
-
+	JobTitles(): Observable<any> {
+		return this.http.get(this.apiUrl + '/jobTitles/');
+	}
 }

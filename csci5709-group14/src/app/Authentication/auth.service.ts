@@ -2,13 +2,14 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable, Subject } from 'rxjs';
+import { BACKEND_URL } from '../services/backend-url';
 import { IUser } from '../signup/IUser';
 
 @Injectable({
 	providedIn: 'root',
 })
 export class AuthService {
-	apiUrl = 'https://hfxcruise-group14-backend.onrender.com/api';
+	apiUrl = BACKEND_URL;
 
 	private token!: string;
 	// Author: Harsh Vaghani - B00923828 - harsh.vaghani@dal.ca
@@ -33,7 +34,10 @@ export class AuthService {
 
 	addNewUser(user: IUser) {
 		this.http.post(this.apiUrl + '/addNewUser/', user).subscribe(
-			(result) => console.log('result: ', result),
+			(result) => {
+				console.log('result: ', result),
+					this.router.navigate(['/login']);
+			},
 			(error) => console.log('error: ', error)
 		);
 	}
