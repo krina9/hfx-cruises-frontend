@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+// Author: Harsh Vaghani - B00923828 - harsh.vaghani@dal.ca
+
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 

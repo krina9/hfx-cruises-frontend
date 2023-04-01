@@ -11,6 +11,8 @@ export class AuthService {
 	apiUrl = 'https://hfxcruise-group14-backend.onrender.com/api';
 
 	private token!: string;
+	// Author: Harsh Vaghani - B00923828 - harsh.vaghani@dal.ca
+
 	private authSubscription = new Subject<boolean>();
 	private isAuthenticated = false;
 	private logoutTimer: any;

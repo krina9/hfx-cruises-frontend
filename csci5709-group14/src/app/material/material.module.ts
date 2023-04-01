@@ -1,3 +1,5 @@
+// Author: Harsh Vaghani - B00923828 - harsh.vaghani@dal.ca
+
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 // Material Form Controls

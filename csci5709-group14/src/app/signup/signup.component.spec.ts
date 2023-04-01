@@ -1,3 +1,5 @@
+// Author: Harsh Vaghani - B00923828 - harsh.vaghani@dal.ca
+
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { SignupComponent } from './signup.component';

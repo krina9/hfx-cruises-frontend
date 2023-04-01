@@ -1,23 +1,24 @@
+// Author: Harsh Vaghani - B00923828 - harsh.vaghani@dal.ca
+
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { EventContactComponent } from './event-contact.component';
 
 describe('EventContactComponent', () => {
-  let component: EventContactComponent;
-  let fixture: ComponentFixture<EventContactComponent>;
+	let component: EventContactComponent;
+	let fixture: ComponentFixture<EventContactComponent>;
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [ EventContactComponent ]
-    })
-    .compileComponents();
+	beforeEach(async () => {
+		await TestBed.configureTestingModule({
+			declarations: [EventContactComponent],
+		}).compileComponents();
 
-    fixture = TestBed.createComponent(EventContactComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+		fixture = TestBed.createComponent(EventContactComponent);
+		component = fixture.componentInstance;
+		fixture.detectChanges();
+	});
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+	it('should create', () => {
+		expect(component).toBeTruthy();
+	});
 });

@@ -1,3 +1,5 @@
+// Author: Harsh Vaghani - B00923828 - harsh.vaghani@dal.ca
+
 import { Injectable } from '@angular/core';
 import {
 	ActivatedRouteSnapshot,
