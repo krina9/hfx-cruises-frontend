@@ -44,3 +44,11 @@
 .navbar {
   background-color: #e3f2fd;
 }
+
+@media all and (max-width:817px)
+ {
+   .align-job
+   {
+    margin-top: 1%;
+   }
+ }

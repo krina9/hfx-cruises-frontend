@@ -21,3 +21,10 @@
     margin-right: 10%;
     margin-left: 10%;
   }
+
+  @media all and (max-width:1118px)
+ {
+    .form-control {
+     width: 100%;
+   }
+ }
