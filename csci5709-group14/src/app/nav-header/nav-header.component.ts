@@ -1,6 +1,7 @@
 // Author: Harsh Vaghani - B00923828 - harsh.vaghani@dal.ca
 
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { AuthService } from '../Authentication/auth.service';
 
@@ -13,7 +14,7 @@ export class NavHeaderComponent implements OnInit {
 	private authSubscription!: Subscription;
 	isUserAuthenticated = false;
 
-	constructor(private authService: AuthService) {}
+	constructor(private authService: AuthService, private router: Router) {}
 
 	ngOnInit(): void {
 		this.authSubscription = this.authService
@@ -25,6 +26,10 @@ export class NavHeaderComponent implements OnInit {
 
 	ngOnDestroy(): void {
 		this.authSubscription.unsubscribe();
+	}
+
+	goToProfile() {
+		this.router.navigate(['account']);
 	}
 
 	logout() {
