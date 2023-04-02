@@ -45,6 +45,7 @@ import { OwnerUpdateComponent } from './owner-update/owner-update.component';
 
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptor } from './Authentication/auth.interceptor';
+import { BookingConfirmedComponent } from './booking-confirmed/booking-confirmed.component';
 
 @NgModule({
 	declarations: [
@@ -73,6 +74,7 @@ import { AuthInterceptor } from './Authentication/auth.interceptor';
 		OwnerConfirmationComponent,
 		OwnerCancelComponent,
 		OwnerUpdateComponent,
+  BookingConfirmedComponent,
 	],
 	imports: [
 		BrowserModule,

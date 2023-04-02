@@ -1,4 +1,6 @@
 <!-- Author: Karan Aggarwal (B00912580) -->
+<!-- Author: Krina Mistry - B00927702 kr981143@dal.ca
+Changed forntend as per need of data-->
 
 <div class="maindiv">
 	<div class="personalinfo">
@@ -11,7 +13,7 @@
 					name="name"
 					ngModel
 					required
-					[(ngModel)]="name"
+					[(ngModel)]="personalInformation.Name"
 					(keypress)="checkAlpha($event)"
 				/>
 				<p style="color: red" *ngIf="nameFail">
@@ -25,8 +27,8 @@
 					name="dob"
 					ngModel
 					required
-					[(ngModel)]="dob"
-					min="2023-03-11"
+					[(ngModel)]="personalInformation.DOB"
+					min="1970-01-01"
 				/>
 				<br /><br />
 				<p style="color: red" *ngIf="dobFail">
@@ -36,7 +38,7 @@
 				<h2>Please enter contact details</h2>
 
 				<label> Email Address </label><br />
-				<input name="first" ngModel required [(ngModel)]="email" />
+				<input name="first" ngModel required [(ngModel)]="personalInformation.Email"/>
 				<p style="color: red" *ngIf="emailFail">
 					Please enter your email address.
 				</p>
@@ -47,7 +49,7 @@
 					name="phone"
 					ngModel
 					required
-					[(ngModel)]="phone"
+					[(ngModel)]="personalInformation.PhoneNumber"
 					(keypress)="checkNumeric($event)"
 				/>
 				<p style="color: red" *ngIf="phoneFail">
@@ -60,31 +62,31 @@
 					name="address"
 					ngModel
 					required
-					[(ngModel)]="address"
+					[(ngModel)]="personalInformation.Address"
 					(keypress)="checkNumeric($event)"
-					maxlength="4"
+					maxlength="100"
 				/>
 				<p style="color: red" *ngIf="addressFail">
-					Please enter the Manufacturing year.
+					Please enter the Address.
 				</p>
 				<br /><br />
 
 				<button class="submit" type="submit">Submit</button>
-				<button class="cancel" type="button">Cancel</button><br />
+				<button class="cancel" type="button" [routerLink]="['/cruisedetails', cruise?._id]">Cancel</button><br />
 			</form>
 		</div>
 		<div class="right">
 			<div class="details">
 				<h1>Your booking details</h1>
-				<p><strong>Cruise Name: </strong> Atlantica horizon cruise</p>
-				<p><strong>Room Number: </strong> 645</p>
-				<p><strong>Number of people: </strong> 6</p>
-				<p class="price"><strong>Cost: </strong> CAD 50</p>
-				<p class="price"><strong>Tax: </strong> CAD 2.5</p>
+				<p><strong>Cruise Name: </strong> {{cruise?.title}}</p>
+				<p><strong>Suite Type: </strong> {{suiteDetails?.type}}</p>
+				<!--p><strong>Description: </strong> {{suiteDetails.details}}</p-->
+				<p class="price"><strong>Cost: </strong> CAD {{suiteDetails?.price}}</p>
+				<p class="price"><strong>Tax: </strong> CAD {{suiteDetails?.price * 0.15 }}</p>
 				<p class="price">------------------------</p>
-				<p class="price"><strong>Total: </strong> 52.5</p>
+				<p class="price"><strong>Total: </strong> CAD {{+suiteDetails?.price + +suiteDetails?.price * 0.15}}</p>
 			</div>
-			<button class="modify" type="button">Modify Booking</button>
+			<button class="modify" type="button" [routerLink]="['/cruisedetails', cruise?._id]">Modify Booking</button>
 		</div>
 	</div>
 </div>

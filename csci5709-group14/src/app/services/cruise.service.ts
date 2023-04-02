@@ -1,3 +1,5 @@
+/* Author: Krina Mistry - B00927702 kr981143@dal.ca  */
+
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';

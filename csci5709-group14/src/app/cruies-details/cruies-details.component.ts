@@ -1,3 +1,5 @@
+/* Author: Krina Mistry - B00927702 kr981143@dal.ca  */
+
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { CruiseService } from '../services/cruise.service';
@@ -38,7 +40,7 @@ export class CruiesDetailsComponent implements OnInit {
 		this.gridColumns = this.gridColumns === 3 ? 4 : 3;
 	}
 
-	public onClick() {
-		this.router.navigate(['personalinfo']);
+	public onClick(type: any) {
+		this.router.navigate(['personalinfo', this.cruise._id, type]);
 	}
 }

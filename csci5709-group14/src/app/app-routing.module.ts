@@ -20,6 +20,7 @@ import { OwnerConfirmationComponent } from './owner-confirmation/owner-confirmat
 import { OwnerCancelComponent } from './owner-cancel/owner-cancel.component';
 import { OwnerUpdateComponent } from './owner-update/owner-update.component';
 import { FeedbackConfirmationComponent } from './feedback/feedback-confirmation/feedback-confirmation.component';
+import { BookingConfirmedComponent } from './booking-confirmed/booking-confirmed.component';
 
 const routes: Routes = [
 	{ path: '', component: HomepageComponent },
@@ -33,14 +34,19 @@ const routes: Routes = [
 	{ path: 'cruisedetails/:id', component: CruiesDetailsComponent },
 	{ path: 'ownerlease', component: OwnerLeaseComponent },
 	{
-		path: 'paymentdetails',
+		path: 'paymentdetails/:id',
 		component: PaymentDetailsComponent,
 		canActivate: [RouteGuard],
 	},
 	{
-		path: 'personalinfo',
+		path: 'personalinfo/:id/:type',
 		component: PersonalInformationComponent,
 		canActivate: [RouteGuard],
+	},
+	{
+		path: 'bookingconfirmation/:id',
+		component: BookingConfirmedComponent,
+		canActivate: [RouteGuard]
 	},
 	{ path: 'feedback', component: FeedbackComponent },
 	{ path: 'packagelist', component: PackageListComponent },
