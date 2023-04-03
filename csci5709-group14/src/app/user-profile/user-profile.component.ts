@@ -8,6 +8,7 @@ import { AuthService } from '../Authentication/auth.service';
 })
 export class UserProfileComponent {
 	user: { [key: string]: string | null };
+	showSuccessMessage = false;
 
 	constructor(private authService: AuthService) {
 		this.user = this.authService.getUserProfile();
@@ -25,6 +26,7 @@ export class UserProfileComponent {
 			this.authService.updateUserProfile(this.user).subscribe(
 				(response) => {
 					console.log('User updated successfully:', response);
+					this.showSuccessMessage = true;
 				},
 				(error) => {
 					console.error('Error updating user:', error);

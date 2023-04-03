@@ -76,9 +76,9 @@ import { EventDetialsComponent } from './event-detials/event-detials.component';
 		OwnerConfirmationComponent,
 		OwnerCancelComponent,
 		OwnerUpdateComponent,
-  		BookingConfirmedComponent,
+		BookingConfirmedComponent,
 		UserProfileComponent,
-  		EventDetialsComponent,
+		EventDetialsComponent,
 	],
 	imports: [
 		BrowserModule,

@@ -1,5 +1,5 @@
 <!-- Author: Karan Aggarwal (B00912580) -->
-<!-- Author: Krina Mistry - B00927702 kr981143@dal.ca 
+<!-- Author: Krina Mistry - B00927702 kr981143@dal.ca
 Have done some changes related to backend  -->
 
 <div class="maindiv">
@@ -16,6 +16,7 @@ Have done some changes related to backend  -->
 					required
 					[(ngModel)]="cardnumber"
 					(keypress)="checkNumeric($event)"
+					maxlength="16"
 				/>
 				<p style="color: red" *ngIf="cardnumberFail">
 					Please enter your Card Number.
