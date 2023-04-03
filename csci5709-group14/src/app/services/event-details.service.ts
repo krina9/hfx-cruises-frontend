@@ -11,8 +11,13 @@ export class EventDetailsService {
 
 	constructor(private http: HttpClient) {}
 
-	addEventDetail(eventData: any): Observable<any> {
+	addEventDetail(eventData: any) {
 		console.log('eventData', eventData);
-		return this.http.post(this.apiUrl + '/addEvent', eventData);
+		this.http.post(this.apiUrl + '/addEvent/', eventData).subscribe(
+			(result) => {
+				console.log('result: ', result);
+			},
+			(error) => console.log('error: ', error)
+		);
 	}
 }
