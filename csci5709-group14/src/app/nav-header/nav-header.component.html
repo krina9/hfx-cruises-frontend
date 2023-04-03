@@ -1,0 +1,44 @@
+<!-- // Author: Harsh Vaghani - B00923828 - harsh.vaghani@dal.ca -->
+
+<mat-toolbar color="primary" class="mat-elevation-z6">
+	<div class="icon-container">
+		<mat-icon>directions_boat</mat-icon>
+
+		<a mat-button color="primary" class="nav-buttons heading" routerLink="/"
+			>HFX Cruise</a
+		>
+	</div>
+
+	<!-- <span class="nav-spacer"></span> -->
+	<div class="nav-items">
+		<a
+			mat-button
+			color="primary"
+			class="nav-buttons"
+			routerLink="packagelist"
+			>Packages</a
+		>
+		<a mat-button color="primary" class="nav-buttons" routerLink="rent">Rent Your Cruise</a>
+		<a mat-button color="primary" class="nav-buttons" routerLink="event"
+			>Events</a
+		>
+		<a
+			mat-button
+			color="primary"
+			class="nav-buttons"
+			routerLink="login"
+			*ngIf="!isUserAuthenticated"
+			>Login</a
+		>
+		<a
+			mat-button
+			color="primary"
+			class="nav-buttons"
+			*ngIf="isUserAuthenticated"
+			(click)="logout()"
+			>Logout</a
+		>
+		<!-- <mat-checkbox id="check"></mat-checkbox>
+		<mat-icon for="check" class="material-symbols-rounded"> menu </mat-icon> -->
+	</div>
+</mat-toolbar>
