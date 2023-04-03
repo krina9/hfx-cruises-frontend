@@ -20,4 +20,23 @@ export class EventDetailsService {
 			(error) => console.log('error: ', error)
 		);
 	}
+
+	getAllEvents() {
+		console.log('getAllEvents');
+		this.http.get(this.apiUrl + '/getEvents/').subscribe(
+			(result) => {
+				console.log('events: ', result);
+			},
+			(error) => console.log('error: ', error)
+		);
+	}
+
+	getEventById(id: string) {
+		this.http.get(this.apiUrl + '/getEventById/:id').subscribe(
+			(result) => {
+				console.log('event: ', result);
+			},
+			(error) => console.log('error: ', error)
+		);
+	}
 }
