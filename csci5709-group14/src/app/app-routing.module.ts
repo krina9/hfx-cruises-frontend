@@ -20,6 +20,7 @@ import { OwnerConfirmationComponent } from './owner-confirmation/owner-confirmat
 import { OwnerCancelComponent } from './owner-cancel/owner-cancel.component';
 import { OwnerUpdateComponent } from './owner-update/owner-update.component';
 import { FeedbackConfirmationComponent } from './feedback/feedback-confirmation/feedback-confirmation.component';
+import { UserProfileComponent } from './user-profile/user-profile.component';
 
 const routes: Routes = [
 	{ path: '', component: HomepageComponent },
@@ -32,6 +33,13 @@ const routes: Routes = [
 	{ path: 'cruiselist', component: CruiesListComponent },
 	{ path: 'cruisedetails/:id', component: CruiesDetailsComponent },
 	{ path: 'ownerlease', component: OwnerLeaseComponent },
+	{ path: 'feedback', component: FeedbackComponent },
+	{ path: 'packagelist', component: PackageListComponent },
+	{ path: 'packagedetails', component: PackageDetailsComponent },
+	{ path: 'ownerconfirmation', component: OwnerConfirmationComponent },
+	{ path: 'ownerCancel', component: OwnerCancelComponent },
+	{ path: 'ownerUpdate', component: OwnerUpdateComponent },
+	{ path: 'feedbacktaken', component: FeedbackConfirmationComponent },
 	{
 		path: 'paymentdetails',
 		component: PaymentDetailsComponent,
@@ -42,13 +50,11 @@ const routes: Routes = [
 		component: PersonalInformationComponent,
 		canActivate: [RouteGuard],
 	},
-	{ path: 'feedback', component: FeedbackComponent },
-	{ path: 'packagelist', component: PackageListComponent },
-	{ path: 'packagedetails', component: PackageDetailsComponent },
-	{ path: 'ownerconfirmation', component: OwnerConfirmationComponent},
-	{ path: 'ownerCancel', component: OwnerCancelComponent},
-	{ path: 'ownerUpdate', component: OwnerUpdateComponent},
-	{ path: 'feedbacktaken', component: FeedbackConfirmationComponent},
+	{
+		path: 'account',
+		component: UserProfileComponent,
+		canActivate: [RouteGuard],
+	},
 ];
 
 RouterModule.forRoot(routes, { scrollPositionRestoration: 'enabled' });
