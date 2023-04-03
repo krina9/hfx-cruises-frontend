@@ -46,6 +46,7 @@ import { OwnerUpdateComponent } from './owner-update/owner-update.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptor } from './Authentication/auth.interceptor';
 import { UserProfileComponent } from './user-profile/user-profile.component';
+import { EventDetialsComponent } from './event-detials/event-detials.component';
 
 @NgModule({
 	declarations: [
@@ -75,6 +76,7 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
 		OwnerCancelComponent,
 		OwnerUpdateComponent,
 		UserProfileComponent,
+  EventDetialsComponent,
 	],
 	imports: [
 		BrowserModule,

@@ -21,6 +21,7 @@ import { OwnerCancelComponent } from './owner-cancel/owner-cancel.component';
 import { OwnerUpdateComponent } from './owner-update/owner-update.component';
 import { FeedbackConfirmationComponent } from './feedback/feedback-confirmation/feedback-confirmation.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
+import { EventDetialsComponent } from './event-detials/event-detials.component';
 
 const routes: Routes = [
 	{ path: '', component: HomepageComponent },
@@ -32,6 +33,7 @@ const routes: Routes = [
 	{ path: 'event', component: EventComponent },
 	{ path: 'cruiselist', component: CruiesListComponent },
 	{ path: 'cruisedetails/:id', component: CruiesDetailsComponent },
+	{ path: 'eventdetails', component: EventDetialsComponent },
 	{ path: 'ownerlease', component: OwnerLeaseComponent },
 	{ path: 'feedback', component: FeedbackComponent },
 	{ path: 'packagelist', component: PackageListComponent },
