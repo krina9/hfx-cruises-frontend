@@ -1,0 +1,26 @@
+<div class="event-detail-container">
+	<h1>{{ eventDetail.event.name }}</h1>
+	<div class="event-location-date">
+		<p>{{ eventDetail.event.location }}</p>
+		<p>
+			{{ eventDetail.event.date | date : 'fullDate' }} at
+			{{ eventDetail.event.time }}
+		</p>
+	</div>
+	<p>{{ eventDetail.details.description }}</p>
+	<ul class="highlight-list">
+		<li *ngFor="let highlight of eventDetail.details.highlights">
+			{{ highlight }}
+		</li>
+	</ul>
+	<p>{{ eventDetail.details.additionalDetails }}</p>
+	<div class="contact-details">
+		<p class="contact-title">Contact Information</p>
+		<p>
+			Contact: {{ eventDetail.contactDetails.firstName }}
+			{{ eventDetail.contactDetails.lastName }}
+		</p>
+		<p>Email: {{ eventDetail.contactDetails.email }}</p>
+		<p>Phone: {{ eventDetail.contactDetails.phone }}</p>
+	</div>
+</div>

@@ -1,7 +1,9 @@
+// Author: Harsh Vaghani - B00923828 - harsh.vaghani@dal.ca
+
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { Observable, Subject } from 'rxjs';
+import { Observable, Subject, tap } from 'rxjs';
 import { BACKEND_URL } from '../services/backend-url';
 import { IUser } from '../signup/IUser';
 
@@ -12,13 +14,31 @@ export class AuthService {
 	apiUrl = BACKEND_URL;
 
 	private token!: string;
-	// Author: Harsh Vaghani - B00923828 - harsh.vaghani@dal.ca
 
 	private authSubscription = new Subject<boolean>();
 	private isAuthenticated = false;
 	private logoutTimer: any;
+	private userProfile: { [key: string]: string | null } = {};
 
 	constructor(private http: HttpClient, private router: Router) {}
+
+	setUserProfile(userProfile: { [key: string]: string | null }) {
+		this.userProfile = userProfile;
+		localStorage.setItem('userProfile', JSON.stringify(userProfile));
+	}
+
+	getUserProfile(): { [key: string]: string | null } {
+		try {
+			const userProfile = localStorage.getItem('userProfile');
+			return userProfile ? JSON.parse(userProfile) : {};
+		} catch (error) {
+			console.error(
+				'Error parsing user profile from local storage:',
+				error
+			);
+			return {};
+		}
+	}
 
 	getIsAuthenticated() {
 		return this.isAuthenticated;
@@ -44,13 +64,14 @@ export class AuthService {
 
 	login(email: string) {
 		this.http
-			.post<{ token: string; expiresIn: number }>(
+			.post<{ user: any; token: string; expiresIn: number }>(
 				this.apiUrl + '/login/',
 				email
 			)
 			.subscribe(
 				(result) => {
 					console.log('result: ', result);
+					this.setUserProfile(result.user);
 					this.token = result.token;
 					if (this.token) {
 						this.authSubscription.next(true);
@@ -69,6 +90,21 @@ export class AuthService {
 				},
 				(error) => console.log('error: ', error)
 			);
+	}
+
+	updateUserProfile(updatedUser: {
+		[key: string]: string | null;
+	}): Observable<any> {
+		return this.http.put(this.apiUrl + '/updateUser/', updatedUser).pipe(
+			tap((response: any) => {
+				this.setUserProfile(response.user);
+			})
+		);
+	}
+
+	deleteUserAccount(userId: string) {
+		this.http.delete(`${this.apiUrl}/deleteAccount/${userId}`);
+		this.logout();
 	}
 
 	logout() {
@@ -114,7 +150,7 @@ export class AuthService {
 				this.token = localAuthData.token;
 				this.isAuthenticated = true;
 				this.authSubscription.next(true);
-
+				this.userProfile = this.getUserProfile();
 				this.logoutTimer = setTimeout(() => {
 					this.logout();
 				}, expiresIn);

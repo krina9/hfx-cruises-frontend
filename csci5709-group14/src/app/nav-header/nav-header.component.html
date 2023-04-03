@@ -30,15 +30,19 @@
 			*ngIf="!isUserAuthenticated"
 			>Login</a
 		>
-		<a
-			mat-button
-			color="primary"
-			class="nav-buttons"
-			*ngIf="isUserAuthenticated"
-			(click)="logout()"
-			>Logout</a
-		>
-		<!-- <mat-checkbox id="check"></mat-checkbox>
-		<mat-icon for="check" class="material-symbols-rounded"> menu </mat-icon> -->
+		<ng-container *ngIf="isUserAuthenticated">
+			<button
+				mat-button
+				color="primary"
+				class="nav-buttons"
+				[matMenuTriggerFor]="userMenu"
+			>
+				User
+			</button>
+			<mat-menu #userMenu="matMenu">
+				<button mat-menu-item (click)="goToProfile()">Profile</button>
+				<button mat-menu-item (click)="logout()">Logout</button>
+			</mat-menu>
+		</ng-container>
 	</div>
 </mat-toolbar>
