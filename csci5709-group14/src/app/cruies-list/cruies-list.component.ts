@@ -1,3 +1,5 @@
+/* Author: Krina Mistry - B00927702 kr981143@dal.ca  */
+
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { CruiseService } from '../services/cruise.service';

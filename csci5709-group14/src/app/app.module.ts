@@ -45,6 +45,7 @@ import { OwnerUpdateComponent } from './owner-update/owner-update.component';
 
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptor } from './Authentication/auth.interceptor';
+import { BookingConfirmedComponent } from './booking-confirmed/booking-confirmed.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { EventDetialsComponent } from './event-detials/event-detials.component';
 
@@ -75,8 +76,9 @@ import { EventDetialsComponent } from './event-detials/event-detials.component';
 		OwnerConfirmationComponent,
 		OwnerCancelComponent,
 		OwnerUpdateComponent,
+  		BookingConfirmedComponent,
 		UserProfileComponent,
-  EventDetialsComponent,
+  		EventDetialsComponent,
 	],
 	imports: [
 		BrowserModule,

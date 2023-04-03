@@ -20,6 +20,7 @@ import { OwnerConfirmationComponent } from './owner-confirmation/owner-confirmat
 import { OwnerCancelComponent } from './owner-cancel/owner-cancel.component';
 import { OwnerUpdateComponent } from './owner-update/owner-update.component';
 import { FeedbackConfirmationComponent } from './feedback/feedback-confirmation/feedback-confirmation.component';
+import { BookingConfirmedComponent } from './booking-confirmed/booking-confirmed.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { EventDetialsComponent } from './event-detials/event-detials.component';
 
@@ -43,16 +44,28 @@ const routes: Routes = [
 	{ path: 'ownerUpdate', component: OwnerUpdateComponent },
 	{ path: 'feedbacktaken', component: FeedbackConfirmationComponent },
 	{
-		path: 'paymentdetails',
+		path: 'paymentdetails/:id',
 		component: PaymentDetailsComponent,
 		canActivate: [RouteGuard],
 	},
 	{
-		path: 'personalinfo',
+		path: 'personalinfo/:id/:type',
 		component: PersonalInformationComponent,
 		canActivate: [RouteGuard],
 	},
 	{
+		path: 'bookingconfirmation/:id',
+		component: BookingConfirmedComponent,
+		canActivate: [RouteGuard]
+	},
+	{ path: 'feedback', component: FeedbackComponent },
+	{ path: 'packagelist', component: PackageListComponent },
+	{ path: 'packagedetails', component: PackageDetailsComponent },
+	{ path: 'ownerconfirmation', component: OwnerConfirmationComponent},
+	{ path: 'ownerCancel', component: OwnerCancelComponent},
+	{ path: 'ownerUpdate', component: OwnerUpdateComponent},
+	{ path: 'feedbacktaken', component: FeedbackConfirmationComponent},
+	{	
 		path: 'account',
 		component: UserProfileComponent,
 		canActivate: [RouteGuard],
