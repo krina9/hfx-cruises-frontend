@@ -40,7 +40,7 @@ export class FeedbackComponent implements OnInit {
 				feedback: this.feedback,
 			};
 			this.http
-				.post('http://localhost:3000/api/feedback', data)
+				.post('https://hfxcruise-group14-backend.onrender.com/api/feedback', data)
 				.subscribe((response) => {
 					console.log(response);
 					this.router.navigate(['/feedbacktaken']);
