@@ -1,3 +1,5 @@
+// Author: Harsh Vaghani - B00923828 - harsh.vaghani@dal.ca
+
 import { Component } from '@angular/core';
 import { AuthService } from '../Authentication/auth.service';
 

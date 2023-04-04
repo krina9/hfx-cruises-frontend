@@ -1,3 +1,5 @@
+// Author: Harsh Vaghani - B00923828 - harsh.vaghani@dal.ca
+
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
