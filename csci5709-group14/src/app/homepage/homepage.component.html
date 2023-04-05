@@ -1,12 +1,14 @@
+<!-- Author: Akash Gupta - B00912118 - ak459448@dal.ca -->
+
 <main>
 	<div class="searchCruise row">
 		<div class="searchOptions">
 			<div class="column left">
-				<mat-form-field appearance="fill" style="width: 188%">
+				<mat-form-field appearance="fill" class="matField">
 					<mat-label>Source</mat-label>
 					<mat-select>
 						<mat-option
-							*ngFor="let source of sources"
+							*ngFor="let source of sourcesList"
 							[value]="source"
 						>
 							{{ source }}
@@ -16,11 +18,7 @@
 			</div>
 
 			<div class="column center">
-				<mat-form-field
-					appearance="fill"
-					class="example-form-field"
-					style="width: 117%"
-				>
+				<mat-form-field appearance="fill" class="matFieldOption">
 					<mat-label>Enter a date range</mat-label>
 					<mat-date-range-input [rangePicker]="rangePicker">
 						<input matStartDate placeholder="Start date" />
@@ -56,11 +54,11 @@
 			</div>
 
 			<div class="column right">
-				<mat-form-field appearance="fill" style="width: 188%">
+				<mat-form-field appearance="fill" class="matField">
 					<mat-label>Destination</mat-label>
 					<mat-select>
 						<mat-option
-							*ngFor="let destination of destinations"
+							*ngFor="let destination of destinationList"
 							[value]="destination"
 						>
 							{{ destination }}

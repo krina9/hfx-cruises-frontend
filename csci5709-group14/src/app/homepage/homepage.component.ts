@@ -1,4 +1,7 @@
+// Author: Akash Gupta - B00912118 - ak459448@dal.ca
+
 import { Component } from '@angular/core';
+import { HomepageService } from '../services/homepage.service';
 
 @Component({
 	selector: 'app-homepage',
@@ -6,8 +9,33 @@ import { Component } from '@angular/core';
 	styleUrls: ['./homepage.component.css'],
 })
 export class HomepageComponent {
-	sources: string[] = ['Halifax', 'Toronto'];
-	destinations: string[] = ['New York', 'Vancouver', 'Montreal'];
+	sourcesList: any = [];
+	destinationList:any=[];
+
+	public constructor(private cruiseDestinationService:HomepageService ) { }
+
+	ngOnInit() {
+		this.getCruiseDestination();
+		this.getCruiseSource();
+	}
+	getCruiseSource() {
+		this.cruiseDestinationService.CruiseSource().subscribe((data: any) => {
+			data.forEach((element: { location: any; }) => {
+				this.sourcesList.push(element.location)
+			});
+		});
+		console.log("sources" + this.sourcesList)
+	}
+	getCruiseDestination() {
+		this.cruiseDestinationService.CruiseDestination().subscribe((data: any) => {
+			data.forEach((element: { location: any; }) => {
+				this.destinationList.push(element.location)
+			});
+		});
+		console.log("destination" + this.destinationList)
+		
+	}
+
 	happeningsList = [
 		{
 			img_name: '../../assets/images/newyork.jpg',

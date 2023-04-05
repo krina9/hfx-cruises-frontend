@@ -1,3 +1,5 @@
+<!-- Author: Akash Gupta - B00912118 - ak459448@dal.ca -->
+
 <div class="class" style="float: right; margin-right: 1%; margin-top: 1%">
 	<button type="button" (click)="closeModal()" style="background-color: #dc143c">
 		X
@@ -81,7 +83,7 @@
 			</div>
 
 			<div class="form-group">
-				<label class="form-label" for="customFile">Default file input example</label>
+				<label class="form-label" for="customFile">upload the resume</label>
 				<input type="file" class="form-control" formControlName="fileupload" style="width: 85%" />
 				<div *ngIf="fileupload.errors?.['required'] && formSubmitted" style="margin-top: 2%"
 					class="alert alert-danger">

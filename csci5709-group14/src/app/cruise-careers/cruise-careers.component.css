@@ -1,3 +1,5 @@
+   /* Author: Akash Gupta - B00912118 - ak459448@dal.ca */
+
    .column {
      float: left;
    }
@@ -26,18 +28,15 @@
      clear: both;
    }
 
-   .example-form {
-     background-color: black;
-   }
-
    .example-full-width-1 {
-     margin-left: 8%;
-     width: 30%;
+     margin-left: 21%;
+     width: 20%;
+     margin-top: 5%;
    }
 
    .example-full-width-2 {
      margin-left: 3%;
-     width: 30%;
+     width: 20%;
    }
 
    .count {
@@ -53,3 +52,33 @@
    .navbar {
      background-color: #e3f2fd;
    }
+
+  .jobSearch
+  {
+	width: 101%;
+	background-image: url(../../assets/images/job_openings.jpg);
+	height: 386px;
+	background-size: 100% 93%;
+	background-repeat: no-repeat;
+  }
+
+   @media all and (max-width:1348px)
+ {
+    .left {
+     width: 50%;
+     margin-top: 2%;
+     margin-left: 3%;
+   }
+ }
+
+    @media all and (max-width:817px)
+ {
+   .align-job
+   {
+    margin-top: 1%;
+   }
+ }
+
+
+
+
