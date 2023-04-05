@@ -1,3 +1,5 @@
+// Author: Akash Gupta - B00912118 - ak459448@dal.ca
+
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { HomepageComponent } from './homepage.component';

@@ -1,3 +1,5 @@
+// Author: Akash Gupta - B00912118 - ak459448@dal.ca
+
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { Observable } from 'rxjs';
@@ -41,12 +43,9 @@ export class CruiseCareersComponent implements OnInit {
 	}
 
 	onSubmit() {
-		console.log('job selected is' + this.job);
 		let filterJobdetail: any;
-		console.log('job selected is' + this.location);
 		this.careersService.CareersList().subscribe((data: any) => {
 			this.carrersList = data;
-			console.log("career List before filter" + JSON.stringify(this.carrersList));
 			this.carrersList = this.carrersList.filter((item: { location: string | undefined; title: string | undefined; }) => {
 				if ((this.job != undefined && this.location != undefined) || (this.job != '' && this.location != '')) {
 					filterJobdetail =
@@ -59,20 +58,16 @@ export class CruiseCareersComponent implements OnInit {
 					filterJobdetail = item.title == this.job;
 				}
 				if ((this.job == undefined && this.location == undefined) || (this.job == '' && this.location == '') || (this.job == undefined && this.location == '') || (this.job == '' && this.location == undefined)) {
-					console.log("hello its me!!!")
 					filterJobdetail = item;
 				}
-				console.log("filterJobDetails" + filterJobdetail);
 				return filterJobdetail;
 			});
-			console.log("after filter" + JSON.stringify(this.carrersList));
 			this.totalFoundJob = Object.keys(this.carrersList).length;
 		});
 	}
 
 	apply(seletecJob: any) {
 		this.jsonJobDetails.jobJson = seletecJob;
-		console.log(this.jsonJobDetails.jobJson);
 	}
 	getCruiseListData() {
 		this.careersService.CareersList().subscribe((data: any) => {
@@ -108,7 +103,6 @@ export class CruiseCareersComponent implements OnInit {
 
 	private _filterJob(value: string): string[] {
 		const filterValue = value.toLowerCase();
-		console.log("filterValueJob" + filterValue)
 
 		return this.filteredJobOptions.filter((filteredJobOptions: string) =>
 			filteredJobOptions.toLowerCase().includes(filterValue)
@@ -116,7 +110,6 @@ export class CruiseCareersComponent implements OnInit {
 	}
 	private _filterLocation(value: string): string[] {
 		const filterValue = value.toLowerCase();
-		console.log("filterValueLocation" + filterValue)
 
 		return this.filteredLocationOptions.filter((filteredLocationOptions: string) =>
 			filteredLocationOptions.toLowerCase().includes(filterValue)

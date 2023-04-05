@@ -1,3 +1,5 @@
+// Author: Akash Gupta - B00912118 - ak459448@dal.ca
+
 import { Component } from '@angular/core';
 import { MatDialog, MatDialogConfig,MatDialogRef  } from '@angular/material/dialog';
 import { JobDetailsService } from '../services/job-details.service';
