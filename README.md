@@ -1,92 +1,729 @@
-# CSCI5709-Group14
 
 
+# Project Proposal
 
-## Getting started
+* *Date Created*: 26 2 2023
+* *Last Modification Date*: 26 2 2023
+* *Gitlab URL*: https://git.cs.dal.ca/hvaghani/csci5709-group14 (Under the develop branch) 
+* *Project Server Url (Netlify)*: https://web-group-14.netlify.app/ 
 
-To make it easy for you to get started with GitLab, here's a list of recommended next steps.
+## Authors
 
-Already a pro? Just edit this README.md and make it your own. Want to make it easy? [Use the template at the bottom](#editing-this-readme)!
+* [Akash Gupta] - *(ak459448@dal.ca)*
+* [Karan Aggarwal] - *(kr284229@dal.ca)*
+* [Harsh Arvindkumar Vaghani] - *(harsh.vaghani@dal.ca)*
+* [Krina Rajeshkumar Mistry] - *(kr981143@dal.ca)*
+* [Raj Nileshkumar Patel] - *(Rj506049@dal.ca)*
 
-## Add your files
+### Prerequisites
 
-- [ ] [Create](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#create-a-file) or [upload](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#upload-a-file) files
-- [ ] [Add files using the command line](https://docs.gitlab.com/ee/gitlab-basics/add-file.html#add-a-file-using-the-command-line) or push an existing Git repository with the following command:
+To have a local copy of this lab / assingnment / project up and running on your local machine, you will first need to install the following software / libraries / plug-ins
 
 ```
-cd existing_repo
-git remote add origin https://git.cs.dal.ca/hvaghani/csci5709-group14.git
-git branch -M main
-git push -uf origin main
+Node.js
+Angular CLI
+Bootstrap
+Angular Material
 ```
 
-## Integrate with your tools
+### Installing
 
-- [ ] [Set up project integrations](https://git.cs.dal.ca/hvaghani/csci5709-group14/-/settings/integrations)
+Here are the series of steps required to get a development env running,
 
-## Collaborate with your team
+**Step 1.)** Download NodeJs from the official website [Node.js](https://nodejs.org/en/). Install the NodeJs and NPM using the windows installer.
 
-- [ ] [Invite team members and collaborators](https://docs.gitlab.com/ee/user/project/members/)
-- [ ] [Create a new merge request](https://docs.gitlab.com/ee/user/project/merge_requests/creating_merge_requests.html)
-- [ ] [Automatically close issues from merge requests](https://docs.gitlab.com/ee/user/project/issues/managing_issues.html#closing-issues-automatically)
-- [ ] [Enable merge request approvals](https://docs.gitlab.com/ee/user/project/merge_requests/approvals/)
-- [ ] [Automatically merge when pipeline succeeds](https://docs.gitlab.com/ee/user/project/merge_requests/merge_when_pipeline_succeeds.html)
+To check the current version and make sure that node is installed run this command in command prompt 
+```
+node -v
+```
+This project was generated with Angular CLI version 15.1.3.
 
-## Test and Deploy
+**Step 2.)** Once the node is installed, download Angular CLI using this command
+```
+npm install -g @angular/cli
+```
 
-Use the built-in continuous integration in GitLab.
+**Step 3.)** Now, to setup the project environment run this command
+```
+ng new <project_name>
+```
+Replace  <project_name> with your project name.  It will also ask you for some additional info which you can choose according to your preferences or you can just press [return] or [enter] to select default settings.
 
-- [ ] [Get started with GitLab CI/CD](https://docs.gitlab.com/ee/ci/quick_start/index.html)
-- [ ] [Analyze your code for known vulnerabilities with Static Application Security Testing(SAST)](https://docs.gitlab.com/ee/user/application_security/sast/)
-- [ ] [Deploy to Kubernetes, Amazon EC2, or Amazon ECS using Auto Deploy](https://docs.gitlab.com/ee/topics/autodevops/requirements.html)
-- [ ] [Use pull-based deployments for improved Kubernetes management](https://docs.gitlab.com/ee/user/clusters/agent/)
-- [ ] [Set up protected environments](https://docs.gitlab.com/ee/ci/environments/protected_environments.html)
 
-***
+**Step 4.)** Run the project using following command,
+```bash
+ng serve --open
+```
+The --open will autometically opens the web project in your browser to http://localhost:4200
 
-# Editing this README
 
-When you're ready to make this README your own, just edit this file and use the handy template below (or feel free to structure it however you want - this is just a starting point!). Thank you to [makeareadme.com](https://www.makeareadme.com/) for this template.
+### Deployment
 
-## Suggestions for a good README
-Every project is different, so consider which of these sections apply to yours. The sections used in the template are suggestions for most open source projects. Also keep in mind that while a README can be too long and detailed, too long is better than too short. If you think your README is too long, consider utilizing another form of documentation rather than cutting out information.
+Netlify is used for deployment of this Project.
 
-## Name
-Choose a self-explaining name for your project.
+**Step 1.)** First, develop your project as per your requirement. 
 
-## Description
-Let people know what your project can do specifically. Provide context and add a link to any reference visitors might be unfamiliar with. A list of Features or a Background subsection can also be added here. If there are alternatives to your project, this is a good place to list differentiating factors.
+**Step 2.)** Once you are done with the changes and your project is ready for deploymet you have to make the deployment build using this command, run this command in your project directory,
+```bash
+ng build
+```
+This commad will create directory named ***dist/<project_name>*** your project directory.
 
-## Badges
-On some READMEs, you may see small images that convey metadata, such as whether or not all the tests are passing for the project. You can use Shields to add some to your README. Many services also have instructions for adding a badge.
+**Step 3.)** Login to the Netlify account and Navigate to the ***deploy*** option
 
-## Visuals
-Depending on what you are making, it can be a good idea to include screenshots or even a video (you'll frequently see GIFs rather than actual videos). Tools like ttygif can help, but check out Asciinema for a more sophisticated method.
+**Step 4.)** Now, you need to upload this folder to *Netlify*, for that, drag and drop the ***dist/<project_name>*** folder from the angular project
 
-## Installation
-Within a particular ecosystem, there may be a common way of installing things, such as using Yarn, NuGet, or Homebrew. However, consider the possibility that whoever is reading your README is a novice and would like more guidance. Listing specific steps helps remove ambiguity and gets people to using your project as quickly as possible. If it only runs in a specific context like a particular programming language version or operating system or has dependencies that have to be installed manually, also add a Requirements subsection.
+**Step 5.)** Once it is uploaded, you will get the URL of your hosted project on Netlify. With these steps, project should be deployed successfully !!!
 
-## Usage
-Use examples liberally, and show the expected output if you can. It's helpful to have inline the smallest example of usage that you can demonstrate, while providing links to more sophisticated examples if they are too long to reasonably include in the README.
 
-## Support
-Tell people where they can go to for help. It can be any combination of an issue tracker, a chat room, an email address, etc.
+## Built With
 
-## Roadmap
-If you have ideas for releases in the future, it is a good idea to list them in the README.
+* [Angular] https://angular.io/guide/setup-local - Angular Framework
+* [Netlify] https://www.netlify.com/ - Netlify Deployment
+* [Visual Studio Code] https://code.visualstudio.com/ - IDE
 
-## Contributing
-State if you are open to contributions and what your requirements are for accepting them.
+## Sources Used
 
-For people who want to make changes to your project, it's helpful to have some documentation on how to get started. Perhaps there is a script that they should run or some environment variables that they need to set. Make these steps explicit. These instructions could also be useful to your future self.
+### event-home.component.html
 
-You can also document commands to lint the code or run tests. These steps help to ensure high code quality and reduce the likelihood that the changes inadvertently break something. Having instructions for running tests is especially helpful if it requires external setup, such as starting a Selenium server for testing in a browser.
+*Lines 3 - 26*
 
-## Authors and acknowledgment
-Show your appreciation to those who have contributed to the project.
+```html
+		<div class="background-img">
+			<mdb-carousel [controls]="true" [dark]="true">
+				<mdb-carousel-item>
+					<img
+						src="../../assets/images/bg.jpg"
+						class="d-block w-100"
+						alt="Picture 1"
+					/>
+				</mdb-carousel-item>
+				<mdb-carousel-item>
+					<img
+						src="../../assets/images/bg1.jpg"
+						class="d-block w-100"
+						alt="Picture 2"
+					/> </mdb-carousel-item
+				><mdb-carousel-item>
+					<img
+						src="../../assets/images/bg2.jpg"
+						class="d-block w-100"
+						alt="Picture 3"
+					/>
+				</mdb-carousel-item>
+			</mdb-carousel>
+		</div>
 
-## License
-For open source projects, say how it is licensed.
+```
 
-## Project status
-If you have run out of energy or time for your project, put a note at the top of the README saying that development has slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.
+The code above was created by adapting the code in Bootstrap 5 Carousel component (https://mdbootstrap.com/docs/angular/components/carousel/) as shown below: 
+
+```html
+<mdb-carousel [controls]="true">
+  <mdb-carousel-item>
+    <img
+      src="https://mdbcdn.b-cdn.net/img/new/slides/041.webp"
+      class="d-block w-100"
+      alt="..."
+    />
+  </mdb-carousel-item>
+  <mdb-carousel-item>
+    <img
+      src="https://mdbcdn.b-cdn.net/img/new/slides/042.webp"
+      class="d-block w-100"
+      alt="..."
+    />
+  </mdb-carousel-item>
+  <mdb-carousel-item>
+    <img
+      src="https://mdbcdn.b-cdn.net/img/new/slides/043.webp"
+      class="d-block w-100"
+      alt="..."
+    />
+  </mdb-carousel-item>
+</mdb-carousel>
+```
+- The code in [event-form.component.html] was referred from (https://mdbootstrap.com/docs/angular/components/carousel/)
+- To create a carousel on the event page to show different images
+- I created new <div> in the event-home page and then used three different images to make the carousel and then added the text on the carousel with HTML and CSS
+
+
+### event-form.component.html
+
+*Lines 3 - 26*
+
+```html
+	<div class="form-stepper">
+		<mat-vertical-stepper [linear]="false" #stepper>
+			<mat-step [stepControl]="personaldetails">
+				<form [formGroup]="personaldetails">
+					<ng-template matStepLabel
+						>Your Personal Details</ng-template
+					>
+					<div class="form-fields">
+						<mat-form-field>
+							<div>
+								<input
+									matInput
+									placeholder="First name"
+									formControlName="first_name"
+									required
+								/>
+							</div>
+						</mat-form-field>
+
+						<mat-form-field>
+							<div>
+								<input
+									matInput
+									placeholder="Last name"
+									formControlName="second_name"
+									required
+								/>
+							</div>
+						</mat-form-field>
+					</div>
+					<div>
+						<button mat-button matStepperNext class="form-buttons">
+							Next
+						</button>
+					</div>
+				</form>
+			</mat-step>
+			<mat-step [stepControl]="contactdetails">
+				<form [formGroup]="contactdetails">
+					<ng-template matStepLabel>Contact details</ng-template>
+					<div class="form-fields">
+						<mat-form-field>
+							<div>
+								<input
+									matInput
+									placeholder="Email ID"
+									formControlName="email"
+									required
+								/>
+							</div>
+						</mat-form-field>
+
+						<mat-form-field>
+							<div>
+								<input
+									matInput
+									placeholder="Phone Number"
+									formControlName="contact"
+									required
+								/>
+							</div>
+						</mat-form-field>
+					</div>
+					<div>
+						<button
+							mat-button
+							matStepperPrevious
+							class="form-buttons"
+						>
+							Back
+						</button>
+						<button mat-button matStepperNext class="form-buttons">
+							Next
+						</button>
+					</div>
+				</form>
+			</mat-step>
+			<mat-step [stepControl]="bookingdetails">
+				<form [formGroup]="bookingdetails">
+					<ng-template matStepLabel>Booking Details</ng-template>
+					<div class="form-fields">
+						<mat-form-field>
+							<div>
+								<input
+									matInput
+									placeholder="Departure City"
+									formControlName="city"
+									required
+								/>
+							</div>
+						</mat-form-field>
+						<mat-form-field>
+							<div>
+								<input
+									matInput
+									placeholder="Date"
+									formControlName="date"
+									required
+								/>
+							</div>
+						</mat-form-field>
+					</div>
+					<div>
+						<button
+							mat-button
+							matStepperPrevious
+							class="form-buttons"
+						>
+							Back
+						</button>
+						<button mat-button matStepperNext class="form-buttons">
+							Next
+						</button>
+					</div>
+				</form>
+			</mat-step>
+			<mat-step [stepControl]="eventdetails">
+				<form [formGroup]="eventdetails">
+					<ng-template matStepLabel>Event Details</ng-template>
+					<div class="form-fields">
+						<mat-form-field>
+							<div>
+								<input
+									matInput
+									placeholder="Event Name"
+									formControlName="event"
+									required
+								/>
+							</div>
+						</mat-form-field>
+
+						<mat-form-field>
+							<div>
+								<input
+									matInput
+									placeholder="Total guests"
+									formControlName="guests"
+									required
+								/>
+							</div>
+						</mat-form-field>
+					</div>
+					<div>
+						<button
+							mat-button
+							matStepperPrevious
+							class="form-buttons"
+						>
+							Back
+						</button>
+						<button mat-button matStepperNext class="form-buttons">
+							Next
+						</button>
+					</div>
+				</form>
+			</mat-step>
+
+			<mat-step [stepControl]="additionaldetails">
+				<form [formGroup]="additionaldetails">
+					<ng-template matStepLabel>Additional Details</ng-template>
+					<div class="form-fields">
+						<mat-form-field>
+							<div>
+								<input
+									matInput
+									placeholder="Additional Information"
+									formControlName="extra"
+									required
+								/>
+							</div>
+						</mat-form-field>
+					</div>
+					<div>
+						<button
+							mat-button
+							matStepperPrevious
+							class="form-buttons"
+						>
+							Back
+						</button>
+						<button mat-button matStepperNext class="submit-button">
+							Submit
+						</button>
+					</div>
+				</form>
+			</mat-step>
+			<mat-step>
+				<ng-template matStepLabel>Complete</ng-template>
+				<h2>Thank you for providing details.</h2>
+				<div>
+					<button
+						mat-button
+						(click)="stepper.reset()"
+						class="form-buttons"
+					>
+						Reset
+					</button>
+				</div>
+			</mat-step>
+		</mat-vertical-stepper>
+	</div>
+```
+
+The code above was created by adapting the code in Vertical variants of the Stepper component of the Angular Material Components (https://material.angular.io/components/stepper/overview) as shown below: 
+
+```html
+<mat-stepper orientation="vertical" [linear]="isLinear" #stepper>
+  <mat-step [stepControl]="firstFormGroup">
+    <form [formGroup]="firstFormGroup">
+      <ng-template matStepLabel>Fill out your name</ng-template>
+      <mat-form-field appearance="fill">
+        <mat-label>Name</mat-label>
+        <input matInput placeholder="Last name, First name" formControlName="firstCtrl" required>
+      </mat-form-field>
+      <div>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step [stepControl]="secondFormGroup">
+    <form [formGroup]="secondFormGroup">
+      <ng-template matStepLabel>Fill out your address</ng-template>
+      <mat-form-field appearance="fill">
+        <mat-label>Address</mat-label>
+        <input matInput formControlName="secondCtrl" placeholder="Ex. 1 Main St, New York, NY"
+               required>
+      </mat-form-field>
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step>
+    <ng-template matStepLabel>Done</ng-template>
+    <p>You are now done.</p>
+    <div>
+      <button mat-button matStepperPrevious>Back</button>
+      <button mat-button (click)="stepper.reset()">Reset</button>
+    </div>
+  </mat-step>
+</mat-stepper>
+```
+
+- The code in [event-form.component.html] was referred from (https://material.angular.io/components/stepper/overview)
+- To create a form on the event page to sumbmit the request to organize an event
+- I used the vertical stpper to create a from with six steps. I also used angular material components with this stepper to build the form fields.
+
+
+### cruise-careers.component.html
+
+*Lines 4 - 59*
+
+```html
+<form class="example-form" (ngSubmit)="onSubmit()">
+		<mat-form-field class="example-full-width-1" appearance="fill">
+			<img src="../../assets/images/location.png" alt="" />
+			<input
+				type="text"
+				name="jobs"
+				[(ngModel)]="job"
+				placeholder="Job Title"
+				matInput
+				[formControl]="jobControl"
+				[matAutocomplete]="auto"
+			/>
+			<mat-autocomplete #auto="matAutocomplete">
+				<mat-option
+					*ngFor="let jobOption of filteredJob | async"
+					[value]="jobOption"
+				>
+					{{ jobOption }}
+				</mat-option>
+			</mat-autocomplete>
+		</mat-form-field>
+		<mat-form-field class="example-full-width-2" appearance="fill">
+			<img src="../../assets/images/search.png" alt="" />
+			<input
+				type="text"
+				name="locations"
+				[(ngModel)]="location"
+				placeholder="Job Location"
+				matInput
+				[formControl]="locationControl"
+				[matAutocomplete]="autoLocation"
+			/>
+			<mat-autocomplete #autoLocation="matAutocomplete">
+				<mat-option
+					*ngFor="let locationOption of filteredLocation | async"
+					[value]="locationOption"
+				>
+					{{ locationOption }}
+				</mat-option>
+			</mat-autocomplete>
+		</mat-form-field>
+		<button
+			class="btn btn-primary"
+			p-100
+			type="submit"
+			style="
+				font-size: 193%;
+				margin-top: 1%;
+				margin-left: 3%;
+				padding: 2%;
+				width: 17%;
+			"
+		>
+			Search
+		</button>
+	</form>
+
+```
+
+The code above was created by adapting the code in Angular Material page (https://material.angular.io/components/autocomplete/overview) as shown below: 
+
+```html
+<form class="example-form">
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Number</mat-label>
+    <input type="text"
+           placeholder="Pick one"
+           aria-label="Number"
+           matInput
+           [formControl]="myControl"
+           [matAutocomplete]="auto">
+    <mat-autocomplete #auto="matAutocomplete">
+      <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+        {{option}}
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+</form>
+```
+
+- The code in [cruise-careers.component.html] was referred from (https://material.angular.io/components/autocomplete/overview)
+- To create a auto-complete based filter
+- I stored the list of companies and the location in cruise-careers.component.ts file and then created two form controls one for job and another one for location by looping it into a for loop.
+
+
+
+### cruise-careers.component.html
+
+*Lines  70 *
+
+```html
+ <div class="jumbotron">
+
+```
+
+The code above was created by adapting the code in [Bootstrap] https://getbootstrap.com/docs/4.0/components/jumbotron/ as shown below: 
+
+```html
+ <div class="jumbotron">
+
+```
+
+- <!---How---> The code was referred from bootsrap page
+- <!---Why---> To create a box to show message regarding job opening
+- <!---How---> Used the class name "jumbotron"
+
+
+
+### cruise-careers.component.ts
+
+*Lines 27 - 53*
+
+```javascript
+    this.totalFoundJob = Object.keys(this.jobDetails).length;
+		this.filteredJob = this.jobControl.valueChanges.pipe(
+			startWith(''),
+			map((value) => this._filterJob(value || ''))
+		);
+		console.log(this.filteredJob);
+		this.filteredLocation = this.locationControl.valueChanges.pipe(
+			startWith(''),
+			map((value) => this._filterLocation(value || ''))
+		);
+		console.log(this.filteredLocation);
+	}
+
+	private _filterJob(value: string): string[] {
+		const filterValue = value.toLowerCase();
+
+		return this.filteredJobOptions.filter((filteredJobOptions) =>
+			filteredJobOptions.toLowerCase().includes(filterValue)
+		);
+	}
+	private _filterLocation(value: string): string[] {
+		const filterValue = value.toLowerCase();
+
+		return this.filteredLocationOptions.filter((filteredLocationOptions) =>
+			filteredLocationOptions.toLowerCase().includes(filterValue)
+		);
+	}
+
+```
+
+The code above was created by adapting the code in Angular Material page (https://material.angular.io/components/autocomplete/overview) as shown below:
+
+```javascript
+myControl = new FormControl('');
+  options: string[] = ['One', 'Two', 'Three'];
+  filteredOptions: Observable<string[]>;
+
+  ngOnInit() {
+    this.filteredOptions = this.myControl.valueChanges.pipe(
+      startWith(''),
+      map(value => this._filter(value || '')),
+    );
+  }
+
+  private _filter(value: string): string[] {
+    const filterValue = value.toLowerCase();
+
+    return this.options.filter(option => option.toLowerCase().includes(filterValue));
+  }
+```
+
+- <!---How---> The code is referred from angular material page https://material.angular.io/components/autocomplete/overview 
+- <!---Why---> To filter the job and location when user provides the input in auto-complete input filed
+- <!---How---> Code was modified by using _.filter function on job and location String arrays.
+
+### homepage.component.html
+
+*Lines 5 - 15/ 59-69*
+
+```html
+<mat-form-field appearance="fill" style="width: 188%">
+    <mat-label>Source</mat-label>
+    <mat-select>
+      <mat-option
+        *ngFor="let source of sources"
+        [value]="source"
+      >
+        {{ source }}
+      </mat-option>
+    </mat-select>
+</mat-form-field>
+
+<mat-form-field appearance="fill" style="width: 188%">
+  <mat-label>Destination</mat-label>
+  <mat-select>
+    <mat-option
+      *ngFor="let destination of destinations"
+      [value]="destination"
+    >
+      {{ destination }}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+
+```
+
+The code above was created by adapting the code in Angular Material page (https://material.angular.io/components/select/overview) as shown below:
+
+```html
+<mat-form-field appearance="fill">
+  <mat-label>Favorite food</mat-label>
+  <mat-select>
+    <mat-option *ngFor="let food of foods" [value]="food.value">
+      {{food.viewValue}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+
+```
+
+- <!---How---> The code is referred from angular material page https://material.angular.io/components/select/overview  
+- <!---Why---> To display the list of source and destination to the user
+- <!---How---> Store the array of source and destination in .ts file of same component and with help *ngFor display the list to the user
+
+### homepage.component.html
+
+*Lines 19-47*
+
+
+```html
+<mat-form-field
+					appearance="fill"
+					class="example-form-field"
+					style="width: 117%"
+				>
+					<mat-label>Enter a date range</mat-label>
+					<mat-date-range-input [rangePicker]="rangePicker">
+						<input matStartDate placeholder="Start date" />
+						<input matEndDate placeholder="End date" />
+					</mat-date-range-input>
+					<mat-datepicker-toggle
+						matIconSuffix
+						[for]="rangePicker"
+					></mat-datepicker-toggle>
+					<mat-date-range-picker #rangePicker>
+						<mat-date-range-picker-actions>
+							<button mat-button matDateRangePickerCancel>
+								Cancel
+							</button>
+							<button
+								mat-raised-button
+								color="primary"
+								matDateRangePickerApply
+							>
+								Apply
+							</button>
+						</mat-date-range-picker-actions>
+					</mat-date-range-picker>
+</mat-form-field>
+
+```
+
+The code above was created by adapting the code in Angular Material page (https://material.angular.io/components/datepicker/overview)
+
+
+
+```
+
+## References and Inspiration
+
+1) https://www.netlify.com/
+2) https://www.educative.io/answers/how-to-create-columns-in-html
+3) https://www.w3schools.com/bootstrap/tryit.asp?filename=trybs_default&stacked=h 
+4) https://angular.io/
+5) https://material.angular.io/
+6) https://mdbootstrap.com/snippets/standard/mdbootstrap/2885096?view=side
+7) https://material.angular.io/components/autocomplete/overview 
+8) https://getbootstrap.com/docs/4.0/components/jumbotron/
+9) https://material.angular.io/components/autocomplete/overview
+10) https://getbootstrap.com/docs/4.0/components/navbar/
+11) https://angular.io/guide/reactive-forms 
+12) https://angular.io/guide
+13) https://www.youtube.com/watch?v=Wy5fJocms_M&t=1218s
+14) https://stackoverflow.com/
+
+Images under assets folder sources
+
+1) bg: https://unsplash.com/photos/tthKs4A7XMY
+2) bg1: https://www.weforum.org/agenda/2018/03/8-steps-to-solve-the-oceans-plastic-problem/
+3) bg2: https://www.infinity-transportation.com/leisure/cruiseport/port-everglades/princess-cruise-line/royal-princess/
+4) bg3: https://unsplash.com/photos/LWFdBz4d6nE
+5) Disney_Cruises:https://www.pngegg.com/en/png-wodmg
+6) P&O : https://freebiesupply.com/logos/po-cruises-logo/
+7) virgin_voyages : https://www.virgin.com/virgin-companies/virgin-voyages
+8) RCL_BIG : https://companieslogo.com/royal-caribbean/logo/
+9) Cruise_Home,Norwegian_Cruise,RCC_Cruise,Virgin_Cruise: https://openverse.org/?referrer=creativecommons.org 
+10) search,location: https://fonts.google.com/
+11) No-Data: https://storyset.com/illustration/no-data/rafiki
+12) newyork : https://www.pexels.com/photo/photo-of-statue-of-liberty-2767739/
+13) login-cruise-img: https://www.shutterstock.com/image-photo/puerto-vallarta-jalisco-mexico-270319-princess-1700026555
+14) login-cruise-img-2:  https://unsplash.com/photos/Q2B08QyXKC4
+15) jack : https://www.ship-technology.com/news/msc-net-zero-ghg-emissions/
+16) hotel_room : https://www.portobay.com/en/hotels/madeira-hotels/porto-santa-maria/gallery/
+
+Other images sources 
+
+https://images.rawpixel.com/image_1300/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvaXMxNDcwOS1pbWFnZS1rd3Z3dDFrcS5qcGc.jpg
+
+https://svgsilh.com/png/1300155-3f51b5.png 
+
+https://upload.wikimedia.org/wikipedia/commons/2/23/Flag-map_of_South_Africa.svg
+
+https://coimages.sciencemuseumgroup.org.uk/images/15/44/pic_1978_928.jpg 
+
+https://upload.wikimedia.org/wikipedia/commons/4/49/Flag-map_of_Central_America.svg
+
+https://images.rawpixel.com/image_1300/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvZnJjcnVpc2Vfc2hpcF9teV9zaGlwLWltYWdlLWt5YmR4NXQ5LmpwZw.jpg 
+
+https://images.rawpixel.com/image_1300/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIyLTEyL2xyL2RpZ2l0YWxjd2NvbW1vbndlYWx0aHB6NTBoMDkxNS1pbWFnZS5qcGc.jpg 
+
+https://images.rawpixel.com/image_1300/cHJpdmF0ZS9zdGF0aWMvaW1hZ2Uvd2Vic2l0ZS8yMDIyLTA0L2xyL2ZsNDc5NzM5NjkwMDYtaW1hZ2Uta3ljaXZxejUuanBn.jpg 
+
+Valuable Mention: 
+
+Maximilian Schwarzmuller: YouTube Tutorial and Lectues of Maximilian helped a lot to learn the angular and related topics.
+```
+
