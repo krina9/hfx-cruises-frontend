@@ -4,8 +4,10 @@
 
 * *Date Created*: 26 2 2023
 * *Last Modification Date*: 26 2 2023
-* *Gitlab URL*: https://git.cs.dal.ca/hvaghani/csci5709-group14 (Under the develop branch) 
-* *Project Server Url (Netlify)*: https://web-group-14.netlify.app/ 
+* *Gitlab Frontend URL*: https://git.cs.dal.ca/hvaghani/csci5709-group14.git
+* *Gitlab Backend URL*: https://git.cs.dal.ca/akashg/web-backend.git
+* *Project Frontend Url (render)*: https://hfxcruise-web-group14.onrender.com/ 
+* *Project Backend Url (render)*: https://hfxcruise-group14-backend.onrender.com/api/
 
 ## Authors
 
