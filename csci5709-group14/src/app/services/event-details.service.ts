@@ -41,4 +41,7 @@ export class EventDetailsService {
 			(error) => console.log('error: ', error)
 		);
 	}
+	geteventDetailsById(id: string): Observable<any> {
+		return this.http.get(this.apiUrl + '/getEventById/' + id);
+	}
 }
