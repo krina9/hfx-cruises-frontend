@@ -21,4 +21,7 @@ export class HomepageService {
   CruiseDestination(): Observable<any> {
     return this.http.get(this.apiUrl + '/cruiseDestination/');
   }
+  getEventDetails(): Observable<any> {
+    return this.http.get(this.apiUrl + '/getEvents/');
+  }
 }
