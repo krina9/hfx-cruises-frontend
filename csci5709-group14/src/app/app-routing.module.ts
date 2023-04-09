@@ -21,6 +21,10 @@ import { OwnerCancelComponent } from './owner-cancel/owner-cancel.component';
 import { OwnerUpdateComponent } from './owner-update/owner-update.component';
 import { FeedbackConfirmationComponent } from './feedback/feedback-confirmation/feedback-confirmation.component';
 import { RentlistComponent } from './rentlist/rentlist.component';
+import { RentdetailsComponent } from './rentdetails/rentdetails.component';
+import { RentpersonalinfoComponent } from './rentpersonalinfo/rentpersonalinfo.component';
+import { RentbookingconfirmedComponent } from './rentbookingconfirmed/rentbookingconfirmed.component';
+import { RentpaymentdetailsComponent } from './rentpaymentdetails/rentpaymentdetails.component';
 
 const routes: Routes = [
 	{ path: '', component: HomepageComponent },
@@ -34,10 +38,23 @@ const routes: Routes = [
 	{ path: 'cruisedetails/:id', component: CruiesDetailsComponent },
 	{ path: 'ownerlease', component: OwnerLeaseComponent },
   { path: 'rent', component: RentlistComponent },
+  { path: 'rentdetails/:id', component: RentdetailsComponent},
+  { path: 'rentpersonalinfo/:id', component: RentpersonalinfoComponent},
+  { path: 'rentbookingconfirmation/:id', component: RentbookingconfirmedComponent},
+  {
+		path: 'rentpaymentdetails/:id',
+		component: RentpaymentdetailsComponent
+//		canActivate: [RouteGuard],
+	},
 	{
+		path: 'paymentdetails/:id',
+		component: PaymentDetailsComponent
+//		canActivate: [RouteGuard],
+	},
+  {
 		path: 'paymentdetails',
 		component: PaymentDetailsComponent,
-		canActivate: [RouteGuard],
+//		canActivate: [RouteGuard],
 	},
 	{
 		path: 'personalinfo',

@@ -29,6 +29,6 @@ export class CruisseLeaseService {
 	}
 
 	getLeaseById(id: string): Observable<any> {
-		return this.http.get(this.apiUrl + '/cruiselist/' + id);
+		return this.http.get(this.apiUrl + '/leaselist/' + id);
 	}
 }

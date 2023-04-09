@@ -2,14 +2,13 @@ import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { PersonalInformationService } from '../services/personal-information.service';
-
 @Component({
-	selector: 'app-payment-details',
-	templateUrl: './payment-details.component.html',
-	styleUrls: ['./payment-details.component.css'],
+  selector: 'app-rentpaymentdetails',
+  templateUrl: './rentpaymentdetails.component.html',
+  styleUrls: ['./rentpaymentdetails.component.css']
 })
-export class PaymentDetailsComponent {
-	cardnumber = '';
+export class RentpaymentdetailsComponent {
+  cardnumber = '';
 	name = '';
 	cvv = '';
 	expdate = '';
@@ -39,7 +38,7 @@ export class PaymentDetailsComponent {
 			cvv: this.cvv
 		};
 		this.personalinformationService.postCardInformation(data, this.bookingReferenceId).subscribe((data: any) => {
-      this.router.navigate(['bookingconfirmation', this.bookingReferenceId]);
+      this.router.navigate(['rentbookingconfirmation', this.bookingReferenceId]);
 		});
 	}
 
@@ -59,4 +58,3 @@ export class PaymentDetailsComponent {
 		return false;
 	}
 }
-

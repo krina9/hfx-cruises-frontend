@@ -46,6 +46,10 @@ import { OwnerUpdateComponent } from './owner-update/owner-update.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptor } from './Authentication/auth.interceptor';
 import { RentlistComponent } from './rentlist/rentlist.component';
+import { RentdetailsComponent } from './rentdetails/rentdetails.component';
+import { RentpersonalinfoComponent } from './rentpersonalinfo/rentpersonalinfo.component';
+import { RentbookingconfirmedComponent } from './rentbookingconfirmed/rentbookingconfirmed.component';
+import { RentpaymentdetailsComponent } from './rentpaymentdetails/rentpaymentdetails.component';
 
 @NgModule({
 	declarations: [
@@ -75,6 +79,10 @@ import { RentlistComponent } from './rentlist/rentlist.component';
 		OwnerCancelComponent,
 		OwnerUpdateComponent,
   RentlistComponent,
+  RentdetailsComponent,
+  RentpersonalinfoComponent,
+  RentbookingconfirmedComponent,
+  RentpaymentdetailsComponent,
 	],
 	imports: [
 		BrowserModule,
