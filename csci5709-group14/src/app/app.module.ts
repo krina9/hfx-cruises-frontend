@@ -48,6 +48,11 @@ import { AuthInterceptor } from './Authentication/auth.interceptor';
 import { BookingConfirmedComponent } from './booking-confirmed/booking-confirmed.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { EventDetialsComponent } from './event-detials/event-detials.component';
+import { RentbookingconfirmedComponent } from './rentbookingconfirmed/rentbookingconfirmed.component';
+import { RentdetailsComponent } from './rentdetails/rentdetails.component';
+import { RentlistComponent } from './rentlist/rentlist.component';
+import { RentpaymentdetailsComponent } from './rentpaymentdetails/rentpaymentdetails.component';
+import { RentpersonalinfoComponent } from './rentpersonalinfo/rentpersonalinfo.component';
 
 @NgModule({
 	declarations: [
@@ -79,6 +84,11 @@ import { EventDetialsComponent } from './event-detials/event-detials.component';
 		BookingConfirmedComponent,
 		UserProfileComponent,
 		EventDetialsComponent,
+  RentbookingconfirmedComponent,
+  RentdetailsComponent,
+  RentlistComponent,
+  RentpaymentdetailsComponent,
+  RentpersonalinfoComponent,
 	],
 	imports: [
 		BrowserModule,

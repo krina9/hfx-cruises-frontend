@@ -9,7 +9,7 @@ import { BACKEND_URL } from './backend-url';
   providedIn: 'root'
 })
 export class PersonalInformationService {
-  	
+
 	apiUrl = BACKEND_URL;
 
 	constructor(private http: HttpClient) {}
@@ -24,6 +24,10 @@ export class PersonalInformationService {
 
 	postBookingInfromation(data: any, id: string) : Observable<any> {
 		return this.http.post(this.apiUrl + '/booking/' + id, data);
+	}
+
+  postRentBookingInfromation(data: any, id: string) : Observable<any> {
+		return this.http.post(this.apiUrl + '/rentbooking/' + id, data);
 	}
 
 	getBookingInformation(id: string) : Observable<any> {
