@@ -35,6 +35,7 @@ const routes: Routes = [
 	{ path: 'cruiselist', component: CruiesListComponent },
 	{ path: 'cruisedetails/:id', component: CruiesDetailsComponent },
 	{ path: 'eventdetails', component: EventDetialsComponent },
+	{ path: 'eventdetails/:id', component: EventDetialsComponent },
 	{ path: 'ownerlease', component: OwnerLeaseComponent },
 	{ path: 'feedback', component: FeedbackComponent },
 	{ path: 'packagelist', component: PackageListComponent },
@@ -56,16 +57,16 @@ const routes: Routes = [
 	{
 		path: 'bookingconfirmation/:id',
 		component: BookingConfirmedComponent,
-		canActivate: [RouteGuard]
+		canActivate: [RouteGuard],
 	},
 	{ path: 'feedback', component: FeedbackComponent },
 	{ path: 'packagelist', component: PackageListComponent },
 	{ path: 'packagedetails', component: PackageDetailsComponent },
-	{ path: 'ownerconfirmation', component: OwnerConfirmationComponent},
-	{ path: 'ownerCancel', component: OwnerCancelComponent},
-	{ path: 'ownerUpdate', component: OwnerUpdateComponent},
-	{ path: 'feedbacktaken', component: FeedbackConfirmationComponent},
-	{	
+	{ path: 'ownerconfirmation', component: OwnerConfirmationComponent },
+	{ path: 'ownerCancel', component: OwnerCancelComponent },
+	{ path: 'ownerUpdate', component: OwnerUpdateComponent },
+	{ path: 'feedbacktaken', component: FeedbackConfirmationComponent },
+	{
 		path: 'account',
 		component: UserProfileComponent,
 		canActivate: [RouteGuard],

@@ -1,26 +1,21 @@
 <div class="event-detail-container">
-	<h1>{{ eventDetail.event.name }}</h1>
+	<img style="height: 400px" [src]="eventDetail.events.event.image" alt="" />
+	<h1 style="margin-top: 3%">{{ eventDetail.events.event.name }}</h1>
 	<div class="event-location-date">
-		<p>{{ eventDetail.event.location }}</p>
+		<p>{{ eventDetail.events.event.location }}</p>
 		<p>
-			{{ eventDetail.event.date | date : 'fullDate' }} at
-			{{ eventDetail.event.time }}
+			{{ eventDetail.events.event.date | date : 'fullDate' }} at
+			{{ eventDetail.events.event.time }}
 		</p>
 	</div>
-	<p>{{ eventDetail.details.description }}</p>
-	<ul class="highlight-list">
-		<li *ngFor="let highlight of eventDetail.details.highlights">
-			{{ highlight }}
-		</li>
-	</ul>
-	<p>{{ eventDetail.details.additionalDetails }}</p>
+	<p>{{ eventDetail.events.event.description }}</p>
 	<div class="contact-details">
 		<p class="contact-title">Contact Information</p>
 		<p>
-			Contact: {{ eventDetail.contactDetails.firstName }}
-			{{ eventDetail.contactDetails.lastName }}
+			Contact: {{ eventDetail.events.contactDetails.firstName }}
+			{{ eventDetail.events.contactDetails.lastName }}
 		</p>
-		<p>Email: {{ eventDetail.contactDetails.email }}</p>
-		<p>Phone: {{ eventDetail.contactDetails.phone }}</p>
+		<p>Email: {{ eventDetail.events.contactDetails.email }}</p>
+		<p>Phone: {{ eventDetail.events.contactDetails.phone }}</p>
 	</div>
 </div>

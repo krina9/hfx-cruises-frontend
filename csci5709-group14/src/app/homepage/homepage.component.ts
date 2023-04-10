@@ -10,62 +10,45 @@ import { HomepageService } from '../services/homepage.service';
 })
 export class HomepageComponent {
 	sourcesList: any = [];
-	destinationList:any=[];
+	destinationList: any = [];
+	happeningsList: any = [];
+	id: any;
 
-	public constructor(private cruiseDestinationService:HomepageService ) { }
+	public constructor(private cruiseDestinationService: HomepageService) {}
 
 	ngOnInit() {
 		this.getCruiseDestination();
 		this.getCruiseSource();
+		this.getEventDetails();
 	}
 	getCruiseSource() {
 		this.cruiseDestinationService.CruiseSource().subscribe((data: any) => {
-			data.forEach((element: { location: any; }) => {
-				this.sourcesList.push(element.location)
+			data.forEach((element: { location: any }) => {
+				this.sourcesList.push(element.location);
 			});
 		});
-		console.log("sources" + this.sourcesList)
+		console.log('sources' + this.sourcesList);
 	}
 	getCruiseDestination() {
-		this.cruiseDestinationService.CruiseDestination().subscribe((data: any) => {
-			data.forEach((element: { location: any; }) => {
-				this.destinationList.push(element.location)
+		this.cruiseDestinationService
+			.CruiseDestination()
+			.subscribe((data: any) => {
+				data.forEach((element: { location: any }) => {
+					this.destinationList.push(element.location);
+				});
 			});
-		});
-		console.log("destination" + this.destinationList)
-		
+		console.log('destination' + this.destinationList);
 	}
 
-	happeningsList = [
-		{
-			img_name: '../../assets/images/newyork.jpg',
-			title: 'New york for $900 and under',
-			intro: 'Last minute deals',
-		},
-		{
-			img_name: '../../assets/images/newyork.jpg',
-			title: 'New york for $900 and under',
-			intro: 'Last minute deals',
-		},
-		{
-			img_name: '../../assets/images/newyork.jpg',
-			title: 'New york for $900 and under',
-			intro: 'Last minute deals',
-		},
-		{
-			img_name: '../../assets/images/newyork.jpg',
-			title: 'New york for $900 and under',
-			intro: 'Last minute deals',
-		},
-		{
-			img_name: '../../assets/images/newyork.jpg',
-			title: 'New york for $900 and under',
-			intro: 'Last minute deals',
-		},
-		{
-			img_name: '../../assets/images/newyork.jpg',
-			title: 'New york for $900 and under',
-			intro: 'Last minute deals',
-		},
-	];
+	getEventDetails() {
+		this.cruiseDestinationService
+			.getEventDetails()
+			.subscribe((data: any) => {
+				data.events.forEach((element: { event: any }) => {
+					this.happeningsList.push(element);
+					console.log(JSON.stringify(this.happeningsList));
+				});
+			});
+		console.log(JSON.stringify(this.happeningsList));
+	}
 }
