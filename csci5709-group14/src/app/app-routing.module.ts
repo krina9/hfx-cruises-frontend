@@ -23,6 +23,11 @@ import { FeedbackConfirmationComponent } from './feedback/feedback-confirmation/
 import { BookingConfirmedComponent } from './booking-confirmed/booking-confirmed.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { EventDetialsComponent } from './event-detials/event-detials.component';
+import { RentlistComponent } from './rentlist/rentlist.component';
+import { RentpaymentdetailsComponent } from './rentpaymentdetails/rentpaymentdetails.component';
+import { RentdetailsComponent } from './rentdetails/rentdetails.component';
+import { RentpersonalinfoComponent } from './rentpersonalinfo/rentpersonalinfo.component';
+import { RentbookingconfirmedComponent } from './rentbookingconfirmed/rentbookingconfirmed.component';
 
 const routes: Routes = [
 	{ path: '', component: HomepageComponent },
@@ -35,6 +40,7 @@ const routes: Routes = [
 	{ path: 'cruiselist', component: CruiesListComponent },
 	{ path: 'cruisedetails/:id', component: CruiesDetailsComponent },
 	{ path: 'eventdetails', component: EventDetialsComponent },
+	{ path: 'eventdetails/:id', component: EventDetialsComponent },
 	{ path: 'ownerlease', component: OwnerLeaseComponent },
 	{ path: 'feedback', component: FeedbackComponent },
 	{ path: 'packagelist', component: PackageListComponent },
@@ -43,7 +49,16 @@ const routes: Routes = [
 	{ path: 'ownerCancel', component: OwnerCancelComponent },
 	{ path: 'ownerUpdate', component: OwnerUpdateComponent },
 	{ path: 'feedbacktaken', component: FeedbackConfirmationComponent },
-	{
+	{ path: 'rent', component: RentlistComponent },
+  { path: 'rentdetails/:id', component: RentdetailsComponent},
+  { path: 'rentpersonalinfo/:id', component: RentpersonalinfoComponent},
+  { path: 'rentbookingconfirmation/:id', component: RentbookingconfirmedComponent},
+  {
+		path: 'rentpaymentdetails/:id',
+		component: RentpaymentdetailsComponent
+//		canActivate: [RouteGuard],
+	},
+  {
 		path: 'paymentdetails/:id',
 		component: PaymentDetailsComponent,
 		canActivate: [RouteGuard],
@@ -56,16 +71,16 @@ const routes: Routes = [
 	{
 		path: 'bookingconfirmation/:id',
 		component: BookingConfirmedComponent,
-		canActivate: [RouteGuard]
+		canActivate: [RouteGuard],
 	},
 	{ path: 'feedback', component: FeedbackComponent },
 	{ path: 'packagelist', component: PackageListComponent },
 	{ path: 'packagedetails', component: PackageDetailsComponent },
-	{ path: 'ownerconfirmation', component: OwnerConfirmationComponent},
-	{ path: 'ownerCancel', component: OwnerCancelComponent},
-	{ path: 'ownerUpdate', component: OwnerUpdateComponent},
-	{ path: 'feedbacktaken', component: FeedbackConfirmationComponent},
-	{	
+	{ path: 'ownerconfirmation', component: OwnerConfirmationComponent },
+	{ path: 'ownerCancel', component: OwnerCancelComponent },
+	{ path: 'ownerUpdate', component: OwnerUpdateComponent },
+	{ path: 'feedbacktaken', component: FeedbackConfirmationComponent },
+	{
 		path: 'account',
 		component: UserProfileComponent,
 		canActivate: [RouteGuard],

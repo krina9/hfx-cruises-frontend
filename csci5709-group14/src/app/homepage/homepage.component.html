@@ -90,13 +90,18 @@
 				style="margin-left: 5%"
 			>
 				<div class="imgSrc">
-					<img [src]="happenings.img_name" alt="" width="100%" />
+					<img
+						style="height: 250px"
+						[src]="happenings.event.image"
+						alt=""
+						width="100%"
+					/>
 				</div>
 				<div class="title">
-					<h2>{{ happenings.title }}</h2>
+					<h2>{{ happenings.event.name }}</h2>
 				</div>
 				<div class="intro">
-					<h3>{{ happenings.intro }}</h3>
+					<h3>{{ happenings.event.description }}</h3>
 				</div>
 				<div class="viewDetails">
 					<button
@@ -104,6 +109,7 @@
 						type="button"
 						class="btn btn-primary"
 						routerLink="packagedetails"
+						[routerLink]="['/eventdetails', happenings._id]"
 					>
 						View Details
 					</button>
